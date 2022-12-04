@@ -1,10 +1,20 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { NextPage } from "next"
+import Head from "next/head"
+import Image from "next/image"
 
 const Home: NextPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="relative flex flex-col mx-auto max-w-[1680px] items-center justify-center min-h-screen">
+      <div className="bg-white w-full h-[60px] flex items-center justify-end pr-3 gap-3">
+        <div className="absolute pl-3 top-[14px] left-[0px]">
+          <Image src="/sampleLogo.png" height={32} width={122} />
+        </div>
+        <button className="w-[130px] h-[40px] bg-white hover:bg-[#18a0fb] border-[1px] border-[#18a0fb] text-[#18a0fb] hover:text-[#18a0fbee] hover:bg-[#18a0fb2e]">
+          Log in
+        </button>
+        <button className="w-[130px] h-[40px]">Register</button>
+      </div>
+
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -12,14 +22,14 @@ const Home: NextPage = () => {
 
       <main className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
         <h1 className="text-6xl font-bold">
-          Welcome to{' '}
+          Welcome to{" "}
           <a className="text-blue-600" href="https://nextjs.org">
             Next.js!
           </a>
         </h1>
 
         <p className="mt-3 text-2xl">
-          Get started by editing{' '}
+          Get started by editing{" "}
           <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
             pages/index.tsx
           </code>
@@ -75,7 +85,7 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
         </a>
       </footer>

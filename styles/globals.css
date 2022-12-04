@@ -1,3 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&family=Montserrat:wght@400;500;700&family=Poppins:wght@400;500&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+}
+
+/* $easeInOutQuart: cubic-bezier(0.77, 0.2, 0.05, 1); */
+/* $easeInBack: cubic-bezier(0.785, 0.135, 0.15, 0.86); */
+/* $easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1); */
+/* cubic-bezier(0.77, 0.2, 0.05, 1) //easeInOutQuart */
+/* cubic-bezier(0.785, 0.135, 0.15, 0.86) //easeInBack */
+/* cubic-bezier(0.23, 1, 0.32, 1) //easeOutQuint */
+
+:root{
+  --easeInOutQuart: cubic-bezier(0.77, 0.2, 0.05, 1);
+  --easeInBack: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  --easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+button {
+  background: #18a0fb;
+  border-radius: 6px;
+  color: white;
+  font-size: 15px;
+  font-family: 'Comfortaa';
+  transition: 0.2s var(--easeOutQuint);
+}
+button:hover {
+  background: #0890eb;
+}
