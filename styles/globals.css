@@ -21,7 +21,7 @@
 }
 
 button {
-  background: #18a0fb;
+  background: #98a0fb;
   border-radius: 6px;
   color: white;
   font-size: 15px;
@@ -29,5 +29,5 @@ button {
   transition: 0.2s var(--easeOutQuint);
 }
 button:hover {
-  background: #0890eb;
+  background: #8890eb;
 }

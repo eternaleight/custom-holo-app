@@ -9,9 +9,7 @@ const Hero = () => {
           <Image src="/group.png" width={130} height={130} />
         </div>
         <div className="absolute top-[80%] left-[50%] translate-x-[-50%]">
-          <button className="w-[130px] h-[40px] md:scale-[90%] scale-[70%]">
-            Join Today
-          </button>
+          <button className="w-[130px] h-[40px] md:scale-[90%] scale-[70%]">Join Today</button>
         </div>
       </div>
     </>

@@ -1,4 +1,4 @@
-const Accordion = () => {
+const Bar2 = () => {
   return(
     <>
       <div className="w-[80%] mx-auto p-4 mb-10 border border-blue-200 bg-blue-50 rounded-md" role="alert">
@@ -31,4 +31,4 @@ const Accordion = () => {
     </>
   )
 }
-export default Accordion
+export default Bar2
