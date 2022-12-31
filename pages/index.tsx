@@ -15,7 +15,7 @@ const Home: NextPage = () => {
     setText("")
   }
   return (
-    <div className="relative flex flex-col items-center min-h-screen mx-auto overflow-x-hidden bg-white">
+    <div className="relative flex flex-col items-center min-h-screen mx-auto overflow-x-hidden bg-white bg-gray-100">
       <Header />
       <Pc addText={addText} />
       <h1 className="absolute z-[1] top-[510px] md:text-[18px] whitespace-pre-line mt-[-50px] sm:mt-[-50px] mb-10">

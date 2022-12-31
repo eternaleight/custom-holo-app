@@ -4,9 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-}
-
 /* $easeInOutQuart: cubic-bezier(0.77, 0.2, 0.05, 1); */
 /* $easeInBack: cubic-bezier(0.785, 0.135, 0.15, 0.86); */
 /* $easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1); */
@@ -28,6 +25,7 @@ button {
   font-family: 'Comfortaa';
   transition: 0.2s var(--easeOutQuint);
 }
+
 button:hover {
   background: #8890eb;
 }
