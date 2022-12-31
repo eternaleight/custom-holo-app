@@ -22,7 +22,7 @@ export type Api = {
   type: string
 }
 
-const Card = () => {
+const GroupIcon = () => {
   const youtube_jpeg = "https://img.youtube.com/vi/"
   const youtube_jpeg_size = {
     large: "/maxresdefault.jpg",
@@ -38,9 +38,8 @@ const Card = () => {
       setHoloData(users)
     })()
   }, [holoUrl])
-
   return (
-    <>
+    <div className="flex mr-2">
       {holoData.map((holoDatas: Api) => {
         return holoDatas.channel.org === "Hololive" &&
           holoDatas.status === "live" &&
@@ -66,20 +65,15 @@ const Card = () => {
           holoDatas.channel.id !== "" &&
           holoDatas.channel.id !== "UCWsfcksUUpoEvhia0_ut0bA" ? (
           <>
-            <div className="md:w-[250px] md:mx-0 mx-6 w-[80%] h-full flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
-              <img className="w-full h-auto rounded-t-xl" src={youtube_jpeg + holoDatas.id + youtube_jpeg_size.large} alt="Image Description" />
-              <div className="p-4 md:p-5">
-                <h3 className="text-lg font-bold text-gray-800 dark:text-white">{holoDatas.title}</h3>
-                <p className="mt-1 text-gray-800 dark:text-gray-400">{holoDatas.channel.name}</p>
-                <a className="inline-flex items-center justify-center px-4 py-3 mt-3 text-sm font-semibold text-white bg-blue-500 border border-transparent gap-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800" href={`${holoVideo}${holoDatas.id}`} target="_blank">
-                  Go stream
-                </a>
-              </div>
+            <div className="flex">
+              <a className="flex items-center gap-x-3.5 py-2 mx-[-7px] rounded-md text-sm text-gray-800 dark:text-gray-400" target="_blank" href={"https://www.youtube.com/" + "@" + holoDatas.channel.english_name.replace(/ /g, "")}>
+                <img className="inline-block h-[2.875rem] w-[2.875rem] rounded-full ring-2 ring-white" src={holoDatas.channel.photo} alt="Image Description" />
+              </a>
             </div>
           </>
         ) : null
       })}
-    </>
+    </div>
   )
 }
-export default Card
+export default GroupIcon
