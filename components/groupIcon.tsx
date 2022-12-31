@@ -39,7 +39,7 @@ const GroupIcon = () => {
     })()
   }, [holoUrl])
   return (
-    <div className="max-md:fixed flex justify-end mr-3 max-md:items-end max-md:flex-col left-[12px] top-[30px] z-[2]">
+    <div className="max-md:absolute flex justify-end mr-3 max-md:items-end max-md:flex-col right-[2px] top-[60px] z-[2]">
       {holoData.map((holoDatas: Api) => {
         return holoDatas.channel.org === "Hololive" &&
           holoDatas.status === "live" &&
