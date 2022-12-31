@@ -9,7 +9,7 @@ import Pc from "../components/pc"
 
 const Home: NextPage = () => {
   const [text, setText] = useState<string>("")
-  const [addText, setAddText] = useState<string>("Magic")
+  const [addText, setAddText] = useState<string>("holoApp")
   const onClickAddText = () => {
     setAddText(text)
     setText("")
@@ -17,8 +17,11 @@ const Home: NextPage = () => {
   return (
     <div className="relative flex flex-col items-center min-h-screen mx-auto overflow-x-hidden bg-white bg-gray-100">
       <Header />
+      <div className="flex flex-wrap justify-center mx-2 my-10 gap-10">
+        <Card />
+      </div>
       <Pc addText={addText} />
-      <h1 className="absolute z-[1] top-[510px] md:text-[18px] whitespace-pre-line mt-[-50px] sm:mt-[-50px] mb-10">
+      <h1 className="z-[1] top-[510px] md:text-[18px] text-[16px] whitespace-pre-line sm:mt-0 xs:mt-[-100px] mt-[-200px] mb-10">
         {`W2B <span>`}
         <form>
           <label>
@@ -29,19 +32,8 @@ const Home: NextPage = () => {
         </form>
         {`</span>S1TE`}
       </h1>
-      <div className="flex flex-wrap justify-center mx-2 mb-10 gap-10">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
       <Bar />
       <Bar2 />
-      <div className="bg-white h-[948px] relative top-[-6px]"></div>
       <Footer />
     </div>
   )
