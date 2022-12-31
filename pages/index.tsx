@@ -18,14 +18,14 @@ const Home: NextPage = () => {
     <div className="relative flex flex-col items-center min-h-screen mx-auto overflow-x-hidden bg-white">
       <Header />
       <Pc addText={addText} />
-      <h1 className="text-[28px] whitespace-pre-line mt-[-50px] mb-10">
+      <h1 className="absolute z-[1] top-[510px] md:text-[18px] whitespace-pre-line mt-[-50px] sm:mt-[-50px] mb-10">
         {`W2B <span>`}
         <form>
           <label>
             Name:
-            <input autoComplete="off" type="text" name="name" className="mx-2 border-2 border-gray-800 rounded-md" value={text} onChange={(e) => setText(e.target.value)} />
+            <input autoComplete="off" type="text" name="name" className="mx-2 border-[1px] border-gray-800 rounded-md" value={text} onChange={(e) => setText(e.target.value)} />
           </label>
-          <input type="submit" value="Submit" className="mx-2 bg-gray-100 border-2 border-gray-800 rounded-md px-[8px] cursor-pointer hover:bg-gray-200" onClick={onClickAddText} />
+          <input type="submit" value="Submit" className="mx-2 bg-gray-100 border-[1px] border-gray-800 rounded-md px-[8px] cursor-pointer hover:bg-gray-200" onClick={onClickAddText} />
         </form>
         {`</span>S1TE`}
       </h1>

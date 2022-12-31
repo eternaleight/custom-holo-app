@@ -1,6 +1,6 @@
 const Card = () => {
   return (
-    <div className="w-[350px] h-[400px] flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+    <div className="md:w-[350px] md:mx-0 mx-6 w-[80%] h-full flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
       <img className="w-full h-auto rounded-t-xl" src="/rectangle.png" alt="Image Description" />
       <div className="p-4 md:p-5">
         <h3 className="text-lg font-bold text-gray-800 dark:text-white">Card title</h3>

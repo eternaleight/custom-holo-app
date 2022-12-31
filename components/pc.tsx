@@ -4,7 +4,7 @@ interface Text {
 const Pc = ({ addText }: Text) => {
   return (
     <>
-      <figure className="mx-auto my-20 relative z-[1] max-w-full w-[50rem] h-[480px] rounded-b-lg ">
+      <figure className="mx-auto lg:px-0 px-8 md:my-20 mt-10 relative z-[1] max-w-full w-[50rem] h-[480px] rounded-b-lg ">
         <div className="relative flex items-center max-w-[50rem] bg-gray-800 rounded-t-lg py-2 px-24 dark:bg-gray-700">
           <div className="absolute flex space-x-1 top-2/4 left-4 -translate-y-1">
             <span className="w-2 h-2 bg-gray-600 rounded-full dark:bg-gray-600"></span>
