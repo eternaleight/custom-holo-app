@@ -4,6 +4,7 @@ import Bar from "../components/bar"
 import Bar2 from "../components/bar2"
 import Card from "../components/card"
 import Footer from "../components/footer"
+import GroupIcon from "../components/groupIcon"
 import Header from "../components/header"
 import Pc from "../components/pc"
 
@@ -15,9 +16,12 @@ const Home: NextPage = () => {
     setText("")
   }
   return (
-    <div className="relative flex flex-col items-center min-h-screen mx-auto overflow-x-hidden bg-white bg-gray-100">
+    <div className="relative flex flex-col items-center justify-end min-h-screen mx-auto overflow-x-hidden bg-white bg-gray-100">
       <Header />
-      <div className="flex flex-wrap justify-center mx-2 my-10 gap-10">
+      <div className="w-full md:hidden">
+      <GroupIcon />
+      </div>
+      <div className="flex flex-wrap justify-center mx-2 mt-8 md:my-10 gap-10">
         <Card />
       </div>
       <Pc addText={addText} />

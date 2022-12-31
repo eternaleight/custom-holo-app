@@ -39,7 +39,7 @@ const GroupIcon = () => {
     })()
   }, [holoUrl])
   return (
-    <div className="flex mr-2">
+    <div className="max-md:fixed flex justify-end mr-3 max-md:items-end max-md:flex-col right-[2px] bottom-[10px] z-[2]">
       {holoData.map((holoDatas: Api) => {
         return holoDatas.channel.org === "Hololive" &&
           holoDatas.status === "live" &&
@@ -65,11 +65,9 @@ const GroupIcon = () => {
           holoDatas.channel.id !== "" &&
           holoDatas.channel.id !== "UCWsfcksUUpoEvhia0_ut0bA" ? (
           <>
-            <div className="flex">
-              <a className="flex items-center gap-x-3.5 py-2 mx-[-7px] rounded-md text-sm text-gray-800 dark:text-gray-400" target="_blank" href={"https://www.youtube.com/" + "@" + holoDatas.channel.english_name.replace(/ /g, "")}>
-                <img className="inline-block h-[2.875rem] w-[2.875rem] rounded-full ring-2 ring-white" src={holoDatas.channel.photo} alt="Image Description" />
+            <a className="flex items-center gap-x-3.5 max-md:m-[-10px] py-2 mx-[-7px] rounded-md text-sm text-gray-800 dark:text-gray-400" target="_blank" href={"https://www.youtube.com/" + "@" + holoDatas.channel.english_name.replace(/ /g, "")}>
+              <img className="inline-block md:h-[2.875rem] h-[3.875rem] md:w-[2.875rem] w-[3.875rem] rounded-full ring-2 ring-white" src={holoDatas.channel.photo} alt="Image Description" />
               </a>
-            </div>
           </>
         ) : null
       })}
