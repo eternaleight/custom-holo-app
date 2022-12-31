@@ -11,7 +11,7 @@ const Header = () => {
         <GroupIcon/>
         </div>
         <AuthButton />
-        <div className="sm:block hidden absolute pl-3 top-[8px] left-[0px] cursor-pointer">
+        <div className="md:block hidden absolute pl-3 top-[8px] left-[0px] cursor-pointer">
           {/* <Image src="/magicLogo.png" height={32} width={122} /> */}
           <div className="text-[28px]">holoApp</div>
         </div>
