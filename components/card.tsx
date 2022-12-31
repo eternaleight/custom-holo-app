@@ -1,3 +1,4 @@
+import dayjs from "dayjs"
 import { useEffect, useState } from "react"
 
 export type Api = {
@@ -70,6 +71,9 @@ const Card = () => {
               <img className="w-full h-auto rounded-t-xl" src={youtube_jpeg + holoDatas.id + youtube_jpeg_size.large} alt="Image Description" />
               <div className="p-4 md:p-5">
                 <h3 className="text-lg font-bold text-gray-800 dark:text-white">{holoDatas.title}</h3>
+                <div className="text-gray-400">
+                {dayjs(holoDatas.start_scheduled).format('YYYY-MM-DD HH:mm')}
+                </div>
                 <p className="mt-1 text-gray-800 dark:text-gray-400">{holoDatas.channel.name}</p>
                 <a className="inline-flex items-center justify-center px-4 py-3 mt-3 text-sm font-semibold text-white bg-blue-500 border border-transparent gap-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800" href={`${holoVideo}${holoDatas.id}`} target="_blank">
                   Go stream
