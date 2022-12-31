@@ -65,8 +65,8 @@ const GroupIcon = () => {
           holoDatas.channel.id !== "" &&
           holoDatas.channel.id !== "UCWsfcksUUpoEvhia0_ut0bA" ? (
           <>
-            <a className="flex items-center gap-x-3.5 max-md:m-[-10px] py-2 mx-[-7px] rounded-md text-sm text-gray-800 dark:text-gray-400" target="_blank" href={"https://www.youtube.com/" + "@" + holoDatas.channel.english_name.replace(/ /g, "")}>
-              <img className="inline-block md:h-[2.875rem] h-[3.875rem] md:w-[2.875rem] w-[3.875rem] rounded-full ring-2 ring-white" src={holoDatas.channel.photo} alt="Image Description" />
+            <a className="flex items-center gap-x-3.5 max-md:m-[-10px] py-2 mx-[-7px] rounded-md text-sm text-gray-800 dark:text-gray-400" target="_blank" href={`${holoVideo}${holoDatas.id}`}>
+              <img className="inline-block md:h-[2.875rem] h-[3.475rem] md:w-[2.875rem] w-[3.475rem] rounded-full ring-2 ring-red-600" src={holoDatas.channel.photo} alt="Image Description" />
               </a>
           </>
         ) : null
