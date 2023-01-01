@@ -16,7 +16,7 @@ const Pc = ({ addText }: Text) => {
 
         <div className="bg-gray-800 rounded-b-lg">
           <a href="https://high-speed-holodule.vercel.app" target="_blank">
-          <img className="h-auto max-w-full rounded-b-lg shadow-[0_2.75rem_3.5rem_-2rem_rgb(45_55_75_/_20%),_0_0_5rem_-2rem_rgb(45_55_75_/_15%)] dark:shadow-[0_2.75rem_3.5rem_-2rem_rgb(0_0_0_/_20%),_0_0_5rem_-2rem_rgb(0_0_0_/_15%)]" src="/a.png" alt="Image Description"/>
+          <img className="h-auto max-w-full rounded-b-lg shadow-[0_2.75rem_3.5rem_-2rem_rgb(45_55_75_/_20%),_0_0_5rem_-2rem_rgb(45_55_75_/_15%)] dark:shadow-[0_2.75rem_3.5rem_-2rem_rgb(0_0_0_/_20%),_0_0_5rem_-2rem_rgb(0_0_0_/_15%)]" src="/b.png" alt="Image Description"/>
           </a>
         </div>
       </figure>
