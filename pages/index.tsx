@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         <LiveCard />
       </div>
       <Pc addText={addText} />
-      <h1 className="z-[1] top-[510px] md:text-[18px] text-[16px] whitespace-pre-line sm:mt-0 xs:mt-[-100px] mt-[-200px] mb-10">
+      <h1 className="z-[1] top-[510px] md:text-[18px] text-[16px] whitespace-pre-line sm:mt-0 xs:mt-[-110px] xxs:mt-[-220px] mt-[-220px] mb-10">
         {`W2B <span>`}
         <form>
           <label>
