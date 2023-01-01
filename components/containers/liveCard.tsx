@@ -35,7 +35,7 @@ const LiveCard = () => {
   const [loading, setLoading] = useState<boolean>(true)
   useEffect(() => {
       setLoading(true)
-    let timeoutId = setTimeout(() => {
+    const timeoutId = setTimeout(() => {
     ;(async () => {
       const res = await fetch(holoUrl)
       const users = await res.json()
