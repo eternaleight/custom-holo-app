@@ -1,16 +1,14 @@
 import type { NextPage } from "next"
 import { useState } from "react"
-import Bar from "../components/bar"
-import Bar2 from "../components/bar2"
-import Card from "../components/card"
-import Footer from "../components/footer"
-import GroupIcon from "../components/groupIcon"
-import Header from "../components/header"
-import Pc from "../components/pc"
+import Footer from "../components/containers/footer"
+import GroupIcon from "../components/containers/groupIcon"
+import Header from "../components/containers/header"
+import LiveCard from "../components/containers/liveCard"
+import Pc from "../components/containers/pc"
 
 const Home: NextPage = () => {
   const [text, setText] = useState<string>("")
-  const [addText, setAddText] = useState<string>("holoApp")
+  const [addText, setAddText] = useState<string>("high-speed-holodule.vercel.app")
   const onClickAddText = () => {
     setAddText(text)
     setText("")
@@ -19,10 +17,10 @@ const Home: NextPage = () => {
     <div className="relative flex flex-col items-center justify-end min-h-screen mx-auto overflow-x-hidden bg-white bg-gray-100">
       <Header />
       <div className="w-full md:hidden">
-      <GroupIcon />
+        <GroupIcon />
       </div>
-      <div className="flex flex-wrap justify-center mx-2 mt-8 md:my-10 gap-10">
-        <Card />
+      <div className="max-w-[1580px] flex flex-wrap justify-center mx-2 mt-8 md:my-10 gap-3">
+        <LiveCard />
       </div>
       <Pc addText={addText} />
       <h1 className="z-[1] top-[510px] md:text-[18px] text-[16px] whitespace-pre-line sm:mt-0 xs:mt-[-100px] mt-[-200px] mb-10">
@@ -36,8 +34,8 @@ const Home: NextPage = () => {
         </form>
         {`</span>S1TE`}
       </h1>
-      <Bar />
-      <Bar2 />
+      {/* <Bar /> */}
+      {/* <Bar2 /> */}
       <Footer />
     </div>
   )

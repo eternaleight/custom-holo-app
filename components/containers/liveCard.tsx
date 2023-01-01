@@ -23,7 +23,7 @@ export type Api = {
   type: string
 }
 
-const Card = () => {
+const LiveCard = () => {
   const youtube_jpeg = "https://img.youtube.com/vi/"
   const youtube_jpeg_size = {
     large: "/maxresdefault.jpg",
@@ -67,7 +67,7 @@ const Card = () => {
           holoDatas.channel.id !== "" &&
           holoDatas.channel.id !== "UCWsfcksUUpoEvhia0_ut0bA" ? (
           <>
-            <div className="md:w-[250px] md:mx-0 mx-6 w-[80%] h-full flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+            <div className="w-[290px] max-md:w-[290px] max-sm:w-[240px] max-xs:w-full h-full flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
               <img className="w-full h-auto rounded-t-xl" src={youtube_jpeg + holoDatas.id + youtube_jpeg_size.large} alt="Image Description" />
               <div className="p-4 md:p-5">
                 <h3 className="text-lg font-bold text-gray-800 dark:text-white">{holoDatas.title}</h3>
@@ -86,4 +86,4 @@ const Card = () => {
     </>
   )
 }
-export default Card
+export default LiveCard
