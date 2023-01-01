@@ -32,16 +32,31 @@ const LiveCard = () => {
   const holoVideo = "https://www.youtube.com/watch?v="
   const holoUrl = "https://holodex.net/api/v2/live/"
   const [holoData, setHoloData] = useState<Api[]>([])
+  const [loading, setLoading] = useState<boolean>(true)
   useEffect(() => {
+      setLoading(true)
+    let timeoutId = setTimeout(() => {
     ;(async () => {
       const res = await fetch(holoUrl)
       const users = await res.json()
       setHoloData(users)
     })()
+      setLoading(false)
+    },0)
+    return () => {
+      clearTimeout(timeoutId)
+    }
   }, [holoUrl])
 
   return (
     <>
+      {loading ? (
+        <>
+          <div className="fixed z-[2] top-[40%] animate-spin inline-block w-10 h-10 border-[3px] border-current border-t-transparent text-[#F3F4F6] rounded-full" role="status" aria-label="loading">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </>
+      ) : null }
       {holoData.map((holoDatas: Api) => {
         return holoDatas.channel.org === "Hololive" &&
           holoDatas.status === "live" &&
@@ -71,9 +86,7 @@ const LiveCard = () => {
               <img className="w-full h-auto rounded-t-xl" src={youtube_jpeg + holoDatas.id + youtube_jpeg_size.large} alt="Image Description" />
               <div className="p-4 md:p-5">
                 <h3 className="text-lg font-bold text-gray-800 dark:text-white">{holoDatas.title}</h3>
-                <div className="text-gray-400">
-                {dayjs(holoDatas.start_scheduled).format('YYYY-MM-DD HH:mm')}
-                </div>
+                <div className="text-gray-400">{dayjs(holoDatas.start_scheduled).format("YYYY-MM-DD HH:mm")}</div>
                 <p className="mt-1 text-gray-800 dark:text-gray-400">{holoDatas.channel.name}</p>
                 <a className="inline-flex items-center justify-center px-4 py-3 mt-3 text-sm font-semibold text-white bg-blue-500 border border-transparent gap-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800" href={`${holoVideo}${holoDatas.id}`} target="_blank">
                   Go stream

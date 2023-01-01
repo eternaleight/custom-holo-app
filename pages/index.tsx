@@ -30,7 +30,7 @@ const Home: NextPage = () => {
             Name:
             <input autoComplete="off" type="text" name="name" className="mx-2 border-[1px] border-gray-800 rounded-md" value={text} onChange={(e) => setText(e.target.value)} />
           </label>
-          <input type="submit" value="Submit" className="mx-2 bg-gray-100 border-[1px] border-gray-800 rounded-md px-[8px] cursor-pointer hover:bg-gray-200" onClick={onClickAddText} />
+          <input type="submit" value="Submit" className="mx-2 bg-gray-100 border-[1px] border-gray-800 rounded-md px-[8px] cursor-pointer hover:bg-gray-300" onClick={onClickAddText} />
         </form>
         {`</span>S1TE`}
       </h1>
