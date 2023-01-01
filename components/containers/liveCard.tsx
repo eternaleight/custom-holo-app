@@ -34,13 +34,13 @@ const LiveCard = () => {
   const [holoData, setHoloData] = useState<Api[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   useEffect(() => {
-      setLoading(true)
+    setLoading(true)
     ;(async () => {
       const res = await fetch(holoUrl)
       const users = await res.json()
       setHoloData(users)
     })()
-      setLoading(false)
+    setLoading(false)
   }, [holoUrl])
 
   return (
@@ -51,7 +51,7 @@ const LiveCard = () => {
             <span className="sr-only">Loading...</span>
           </div>
         </>
-      ) : null }
+      ) : null}
       {holoData.map((holoDatas: Api) => {
         return holoDatas.channel.org === "Hololive" &&
           holoDatas.status === "live" &&
@@ -79,11 +79,11 @@ const LiveCard = () => {
           <>
             <div className="w-[290px] max-md:w-[290px] max-sm:w-[240px] max-xs:w-[48%] h-full flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
               <a href={`${holoVideo}${holoDatas.id}`}>
-              <img className="w-full h-auto rounded-t-xl" src={youtube_jpeg + holoDatas.id + youtube_jpeg_size.large} alt="Image Description" />
-              <div className="p-2 md:p-3">
-                <h3 className="flex font-bold text-gray-800 text-md dark:text-white max-sm:text-[12px]">{holoDatas.title}</h3>
-                <div className="text-gray-400 max-sm:text-[14px]">{dayjs(holoDatas.start_scheduled).format("HH:mm")}</div>
-              </div>
+                <img className="w-full h-auto rounded-t-xl" src={youtube_jpeg + holoDatas.id + youtube_jpeg_size.large} alt="Image Description" />
+                <div className="p-2 md:p-3">
+                  <h3 className="flex font-bold text-gray-800 text-md dark:text-white max-sm:text-[12px]">{holoDatas.title}</h3>
+                  <div className="text-gray-400 max-sm:text-[14px]">{dayjs(holoDatas.start_scheduled).format("HH:mm")}</div>
+                </div>
               </a>
             </div>
           </>
