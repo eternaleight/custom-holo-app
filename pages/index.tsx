@@ -8,7 +8,7 @@ import Pc from "../components/containers/pc"
 
 const Home: NextPage = () => {
   const [text, setText] = useState<string>("")
-  const [addText, setAddText] = useState<string>("high-speed-holodule.vercel.app")
+  const [addText, setAddText] = useState<string>("holo-app.vercel.app")
   const onClickAddText = () => {
     setAddText(text)
     setText("")
