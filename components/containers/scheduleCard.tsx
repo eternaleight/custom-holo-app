@@ -46,7 +46,7 @@ const ScheduleCard = () => {
           holoDatas.channel.id !== "" &&
           holoDatas.channel.id !== "UCWsfcksUUpoEvhia0_ut0bA" ? (
           <>
-            <div className="relative w-[250px] max-mm:w-[32%] max-md:w-[32%] max-sm:w-[32%] max-xs:w-[48.5%] h-full flex flex-col bg-white border shadow-sm rounded-xl dark:bg-[#223e] dark:border-gray-700 dark:shadow-slate-700/[.7]">
+            <div className="relative w-[250px] max-xl:w-[24%] max-mm:w-[32.5%] max-md:w-[48.5%] max-sm:w-[48%.5] max-xs:w-[48.5%] h-full flex flex-col bg-white border shadow-sm rounded-xl dark:bg-[#223e] dark:border-gray-700 dark:shadow-slate-700/[.7]">
               <div className="absolute text-xs font-bold text-center text-gray-200 bottom-1 right-2 opacity-90 max-sm:text-[10px]">
                 <span className="mr-[1px]">◎</span>配信予定
               </div>
