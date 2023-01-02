@@ -78,7 +78,10 @@ const LiveCard = () => {
           holoDatas.channel.id !== "UCWsfcksUUpoEvhia0_ut0bA" &&
           Date.now() - 60 * 60 * 24 * 1000 * 1 < new Date(holoDatas.start_scheduled).getTime() ? (
           <>
-            <div className="w-[290px] max-md:w-[290px] max-sm:w-[240px] max-xs:w-[48%] h-full flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+            <div className="relative w-[290px] max-md:w-[290px] max-sm:w-[240px] max-xs:w-[48%] h-full flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+              <div className="absolute text-xs font-bold text-center text-red-500 bottom-1 right-2 opacity-90">
+                  <span className="mr-[1px]">●</span>REC
+              </div>
               <a href={`${holoVideo}${holoDatas.id}`} target="_blank">
                 <img className="w-full h-auto rounded-t-xl" src={youtube_jpeg + holoDatas.id + youtube_jpeg_size.large} alt="Image Description" />
                 <div className="p-2 md:p-3">

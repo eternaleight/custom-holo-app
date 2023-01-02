@@ -26,6 +26,3 @@ button {
   transition: 0.2s var(--easeOutQuint);
 }
 
-button:hover {
-  background: #8890eb;
-}
