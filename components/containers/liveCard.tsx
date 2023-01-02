@@ -75,7 +75,8 @@ const LiveCard = () => {
           holoDatas.channel.id !== "UC2hx0xVkMoHGWijwr_lA01w" &&
           holoDatas.channel.id !== "UCDRWSO281bIHYVi-OV3iFYA" &&
           holoDatas.channel.id !== "" &&
-          holoDatas.channel.id !== "UCWsfcksUUpoEvhia0_ut0bA" ? (
+          holoDatas.channel.id !== "UCWsfcksUUpoEvhia0_ut0bA" &&
+          Date.now() - 60 * 60 * 24 * 1000 * 1 < new Date(holoDatas.start_scheduled).getTime() ? (
           <>
             <div className="w-[290px] max-md:w-[290px] max-sm:w-[240px] max-xs:w-[48%] h-full flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
               <a href={`${holoVideo}${holoDatas.id}`}>

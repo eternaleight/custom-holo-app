@@ -63,11 +63,12 @@ const GroupIcon = () => {
           holoDatas.channel.id !== "UC2hx0xVkMoHGWijwr_lA01w" &&
           holoDatas.channel.id !== "UCDRWSO281bIHYVi-OV3iFYA" &&
           holoDatas.channel.id !== "" &&
-          holoDatas.channel.id !== "UCWsfcksUUpoEvhia0_ut0bA" ? (
+          holoDatas.channel.id !== "UCWsfcksUUpoEvhia0_ut0bA" &&
+          Date.now() - 60 * 60 * 24 * 1000 * 1 < new Date(holoDatas.start_scheduled).getTime() ? (
           <>
             <a className="flex items-center gap-x-3.5 max-md:mt-[-32px] py-2 mx-[-7px] rounded-md text-sm text-gray-800 dark:text-gray-400" target="_blank" href={`${holoVideo}${holoDatas.id}`}>
               <img className="inline-block md:h-[2.875rem] h-[3.475rem] md:w-[2.875rem] w-[3.475rem] rounded-full ring-1 ring-red-600" src={holoDatas.channel.photo} alt="Image Description" />
-              </a>
+            </a>
           </>
         ) : null
       })}
