@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       </div>
       <div className="max-w-[1580px] flex flex-wrap justify-center mx-2 mt-8 md:my-10 gap-3">
         <LiveCard />
-        <ScheduleCard/>
+        <ScheduleCard />
       </div>
       <Pc addText={addText} />
       <h1 className="z-[1] top-[510px] md:text-[18px] text-[16px] whitespace-pre-line sm:mt-0 xs:mt-[-110px] xxs:mt-[-220px] mt-[-220px] mb-10">
