@@ -18,6 +18,7 @@ module.exports = {
       // => @media (min-width: 1280px) { ... }
       "max-xl": { max: "1279px" },
       "max-lg": { max: "1023px" },
+      "max-mm": { max: "798px" },
       "max-md": { max: "767px" },
       "max-sm": { max: "639px" },
       "max-xs": { max: "539px" },
