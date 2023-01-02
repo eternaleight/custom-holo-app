@@ -5,6 +5,7 @@ import GroupIcon from "../components/containers/groupIcon"
 import Header from "../components/containers/header"
 import LiveCard from "../components/containers/liveCard"
 import Pc from "../components/containers/pc"
+import ScheduleCard from "../components/containers/scheduleCard"
 
 const Home: NextPage = () => {
   const [text, setText] = useState<string>("")
@@ -21,6 +22,7 @@ const Home: NextPage = () => {
       </div>
       <div className="max-w-[1580px] flex flex-wrap justify-center mx-2 mt-8 md:my-10 gap-3">
         <LiveCard />
+        <ScheduleCard/>
       </div>
       <Pc addText={addText} />
       <h1 className="z-[1] top-[510px] md:text-[18px] text-[16px] whitespace-pre-line sm:mt-0 xs:mt-[-110px] xxs:mt-[-220px] mt-[-220px] mb-10">

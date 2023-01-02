@@ -86,6 +86,7 @@ const LiveCard = () => {
                 <img className="w-full h-auto rounded-t-xl" src={youtube_jpeg + holoDatas.id + youtube_jpeg_size.large} alt="Image Description" />
                 <div className="p-2 md:p-3">
                   <h3 className="flex font-bold text-gray-800 text-md dark:text-white max-sm:text-[12px]">{holoDatas.title}</h3>
+                <p className="mt-1 text-gray-800 dark:text-gray-400 max-sm:text-[14px]">@{holoDatas.channel.english_name.replace(/ /g, '')}</p>
                   <div className="text-gray-400 max-sm:text-[14px]">{dayjs(holoDatas.start_scheduled).format("HH:mm")}</div>
                 </div>
               </a>

@@ -20,7 +20,7 @@ const ScheduleCard = () => {
   }, [holoUrl])
 
   return (
-    <div>
+    <div className="flex flex-wrap justify-center h-full gap-3">
       {holoData.map((holoDatas: Api) => {
         return holoDatas.channel.org === "Hololive" &&
           holoDatas.status === "upcoming" &&
@@ -46,15 +46,15 @@ const ScheduleCard = () => {
           holoDatas.channel.id !== "" &&
           holoDatas.channel.id !== "UCWsfcksUUpoEvhia0_ut0bA" ? (
           <>
-            <div className="w-[290px] mt-8 max-md:w-[290px] max-sm:w-[240px] max-xs:w-full h-[300px] flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+            <div className="relative w-[290px] max-md:w-[290px] max-sm:w-[240px] max-xs:w-[48%] h-full flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+              <div className="absolute text-xs font-bold text-center text-gray-200 bottom-1 right-2 opacity-90 max-sm:text-[10px]">
+                  <span className="mr-[1px]">◎</span>配信予定
+              </div>
               <img className="w-full h-auto rounded-t-xl" src={youtube_jpeg + holoDatas.id + youtube_jpeg_size.large} alt="Image Description" />
-              <div className="p-4 md:p-5">
-                <h3 className="text-lg font-bold text-gray-800 dark:text-white">{holoDatas.title}</h3>
-                <div className="text-gray-400">{dayjs(holoDatas.start_scheduled).format("YYYY-MM-DD HH:mm")}</div>
-                <p className="mt-1 text-gray-800 dark:text-gray-400">{holoDatas.channel.name}</p>
-                <a className="inline-flex items-center justify-center px-4 py-3 mt-3 text-sm font-semibold text-white bg-blue-500 border border-transparent gap-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800" href={`${holoVideo}${holoDatas.id}`} target="_blank">
-                  Go stream
-                </a>
+              <div className="p-3 md:p-4">
+                  <h3 className="flex font-bold text-gray-800 text-md dark:text-white max-sm:text-[12px]">{holoDatas.title}</h3>
+                <p className="mt-1 text-gray-800 dark:text-gray-400 max-sm:text-[14px]">@{holoDatas.channel.english_name.replace(/ /g, '')}</p>
+                <div className="text-gray-400 max-sm:text-[14px]">{dayjs(holoDatas.start_scheduled).format("YYYY-MM-DD HH:mm")}</div>
               </div>
             </div>
           </>
