@@ -29,28 +29,28 @@ button {
   transition: 0.2s var(--easeOutQuint);
 }
 
-.card-box .card {
-    position:relative;
-    overflow:hidden;
-}
+/* .card-box .card { */
+/*     position:relative; */
+/*     overflow:hidden; */
+/* } */
  
-    .card-box .card::before {
-        position:absolute;
-        top:0;
-        left:-100%;
-        bottom:0;
-        margin:auto 0;
-        width:100px;
-        height:200%;
-        content:"";
-        background:linear-gradient(to right, #fff, #fff 10%, transparent 10%, transparent 20%, #fff 20%, #fff 90%, transparent 90%, transparent 94%, #fff 94%);
-        opacity:0.3;
-        transform:translate(-50%) rotate(45deg);
-        transition:left 0.4s var(--easeInBack), transform 0.4s ease-in;
-    }
+/*     .card-box .card::before { */
+/*         position:absolute; */
+/*         top:0; */
+/*         left:-100%; */
+/*         bottom:0; */
+/*         margin:auto 0; */
+/*         width:100px; */
+/*         height:200%; */
+/*         content:""; */
+/*         background:linear-gradient(to right, #fff, #fff 10%, transparent 10%, transparent 20%, #fff 20%, #fff 90%, transparent 90%, transparent 94%, #fff 94%); */
+/*         opacity:0.3; */
+/*         transform:translate(-50%) rotate(45deg); */
+/*         transition:left 0.4s ease-in, transform 0.4s ease-in; */
+/*     } */
  
-    .card-box .card:hover::before {
-        left:150%;
-        transform:translate(50%) rotate(45deg);
-        transition-timing-function:ease-out, ease-out;
-    }
+/*     .card-box .card:hover::before { */
+/*         left:150%; */
+/*         transform:translate(50%) rotate(45deg); */
+/*         transition-timing-function:ease-out, ease-out; */
+/*     } */
