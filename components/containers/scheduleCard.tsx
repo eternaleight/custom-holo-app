@@ -46,15 +46,17 @@ const ScheduleCard = () => {
           holoDatas.channel.id !== "" &&
           holoDatas.channel.id !== "UCWsfcksUUpoEvhia0_ut0bA" ? (
           <>
-            <div className="relative w-[250px] max-xl:w-[24%] max-mm:w-[32.5%] max-md:w-[48.5%] max-sm:w-[48%.5] max-xs:w-[48.5%] h-full flex flex-col bg-white border shadow-sm rounded-xl dark:bg-[#223e] dark:border-gray-700 dark:shadow-slate-700/[.7]">
+            <div className="card-box relative w-[250px] max-xl:w-[24%] max-mm:w-[32.5%] max-md:w-[48.5%] max-sm:w-[48%.5] max-xs:w-[48.5%] h-full flex flex-col bg-white border shadow-sm rounded-xl dark:bg-[#223e] dark:border-gray-700 dark:shadow-slate-700/[.7]">
               <div className="absolute text-xs font-bold text-center text-gray-200 bottom-1 right-2 opacity-90 max-sm:text-[10px]">
                 <span className="mr-[1px]">◎</span>配信予定
               </div>
               <a href={`${holoVideo}${holoDatas.id}`} target="_blank">
+                <div className="card">
                 <img className="w-full h-auto rounded-t-xl" src={youtube_jpeg + holoDatas.id + youtube_jpeg_size.large} alt="Image Description" />
                 <div className="p-3 md:p-4">
                   <div className="text-gray-400 max-sm:text-[14px]">{dayjs(holoDatas.start_scheduled).format("MM-DD HH:mm")}</div>
                   <h3 className="flex font-bold text-gray-800 text-md dark:text-white max-sm:text-[12px]">{holoDatas.title}</h3>
+                </div>
                 </div>
               </a>
             </div>
