@@ -20,7 +20,7 @@ const Home: NextPage = () => {
       <div className="w-full md:hidden">
         <GroupIcon />
       </div>
-      <div className="flex flex-wrap justify-center mx-2 mt-8 md:my-10 gap-2">
+      <div className="flex flex-wrap justify-center mx-2 mt-8 md:my-8 gap-2">
         <LiveCard />
         <ScheduleCard />
       </div>
