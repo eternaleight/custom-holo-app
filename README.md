@@ -3,8 +3,10 @@
 
 https://holo-app.vercel.app
 <a href="https://holo-app.vercel.app" target="_blank" rel=”noopener”><img src="https://user-images.githubusercontent.com/96198088/210595471-b0cb5a9f-8ee6-410b-b19b-ff0cad1d04f7.png" alt="holo-app" /></a>
-<a href="https://holo-app.vercel.app" target="_blank" rel=”noopener”><img src="https://user-images.githubusercontent.com/96198088/210599995-94e236d2-17be-47af-8ffb-e1f0bf3ba847.png" alt="holo-app" width="48%" /></a>
+<a href="https://holo-app.vercel.app" target="_blank" rel=”noopener”><img src="https://user-images.githubusercontent.com/96198088/210602459-7add46a0-5552-4212-9aee-61b34b0e655e.PNG" alt="holo-app" width="48%" /></a>
 <a href="https://holo-app.vercel.app" target="_blank" rel=”noopener”><img src="https://user-images.githubusercontent.com/96198088/210601128-d9eb4124-0ddf-475c-b666-37d209354ae0.png" alt="holo-app" width="48%" /></a>
+
+
 
 
 ## Stack
