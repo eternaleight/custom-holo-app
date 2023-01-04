@@ -1,4 +1,4 @@
-## holo-app
+## holoApp
 
 
 https://holo-app.vercel.app
