@@ -18,6 +18,7 @@ http://holo-app.vercel.app
 │   └── templates
 ├── next-env.d.ts
 ├── next.config.js
+├── node_modules
 ├── package-lock.json
 ├── package.json
 ├── pages
@@ -25,6 +26,7 @@ http://holo-app.vercel.app
 │   └── index.tsx
 ├── postcss.config.js
 ├── prettier.config.js
+├── public
 ├── styles
 │   └── globals.css
 ├── tailwind.config.js
