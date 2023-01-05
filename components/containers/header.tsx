@@ -1,7 +1,6 @@
-import Image from "next/image"
 import Head from "next/head"
-import GroupIcon from "./groupIcon"
-import AuthButton from "./authButton"
+import AuthButton from "../atoms/authButton"
+import GroupIcon from "../atoms/groupIcon"
 
 const Header = () => {
   return (
@@ -12,7 +11,6 @@ const Header = () => {
         </div>
         <AuthButton />
         <div className="md:block hidden absolute pl-3 top-[8px] left-[0px] cursor-pointer">
-          {/* <Image src="/magicLogo.png" height={32} width={122} /> */}
           <div className="text-[28px]">holoApp</div>
         </div>
         <span className="cursor-pointer inline-flex justify-center items-center w-[46px] h-[46px] rounded-full border border-gray-400 text-gray-400">

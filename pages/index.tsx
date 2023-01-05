@@ -1,11 +1,11 @@
 import type { NextPage } from "next"
 import { useState } from "react"
-import Footer from "../components/containers/footer"
-import GroupIcon from "../components/containers/groupIcon"
 import Header from "../components/containers/header"
-import LiveCard from "../components/containers/liveCard"
-import Pc from "../components/containers/pc"
-import ScheduleCard from "../components/containers/scheduleCard"
+import Footer from "../components/containers/footer"
+import LiveCard from "../components/atoms/liveCard"
+import Hero from "../components/containers/hero"
+import ScheduleCard from "../components/atoms/scheduleCard"
+import GroupIcon from "../components/atoms/groupIcon"
 
 const Home: NextPage = () => {
   const [text, setText] = useState<string>("")
@@ -24,7 +24,7 @@ const Home: NextPage = () => {
         <LiveCard />
         <ScheduleCard />
       </div>
-      <Pc addText={addText} />
+      <Hero addText={addText} />
       <h1 className="z-[1] top-[510px] md:text-[18px] text-[16px] whitespace-pre-line sm:mt-0 xs:mt-[-110px] xxs:mt-[-220px] mt-[-220px] mb-10">
         {`W2B <span>`}
         <form>
@@ -36,8 +36,6 @@ const Home: NextPage = () => {
         </form>
         {`</span>S1TE`}
       </h1>
-      {/* <Bar /> */}
-      {/* <Bar2 /> */}
       <Footer />
     </div>
   )

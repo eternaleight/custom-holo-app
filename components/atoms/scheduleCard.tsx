@@ -1,28 +1,8 @@
-import { useEffect, useState } from "react"
+import dayjs from "dayjs"
+import React, { useEffect, useState } from "react"
+import { Api } from "./liveCard"
 
-export type Api = {
-  available_at: string
-  channel: {
-    english_name: string
-    id: string
-    name: string
-    org?: "Hololive" | "Nijisanji"
-    photo: string
-    type: string
-  }
-  duration: number
-  id: string
-  live_viewres: number
-  published_at: string
-  start_actual: string
-  start_scheduled: string
-  status: "live" | "upcoming"
-  title: string
-  topic_id: string
-  type: string
-}
-
-const GroupIcon = () => {
+const ScheduleCard = () => {
   const youtube_jpeg = "https://img.youtube.com/vi/"
   const youtube_jpeg_size = {
     large: "/maxresdefault.jpg",
@@ -38,11 +18,12 @@ const GroupIcon = () => {
       setHoloData(users)
     })()
   }, [holoUrl])
+
   return (
-    <div className="max-md:absolute flex justify-end mr-3 max-md:items-end max-md:flex-col right-[2px] top-[60px] z-[2]">
+    <div className="flex flex-wrap justify-center h-full gap-2">
       {holoData.map((holoDatas: Api) => {
         return holoDatas.channel.org === "Hololive" &&
-          holoDatas.status === "live" &&
+          holoDatas.status === "upcoming" &&
           holoDatas.channel.id !== "UCKeAhJvy8zgXWbh9duVjIaQ" &&
           holoDatas.channel.id !== "UCZgOv3YDEs-ZnZWDYVwJdmA" &&
           holoDatas.channel.id !== "UC9mf_ZVpouoILRY9NUIaK-w" &&
@@ -63,16 +44,26 @@ const GroupIcon = () => {
           holoDatas.channel.id !== "UC2hx0xVkMoHGWijwr_lA01w" &&
           holoDatas.channel.id !== "UCDRWSO281bIHYVi-OV3iFYA" &&
           holoDatas.channel.id !== "" &&
-          holoDatas.channel.id !== "UCWsfcksUUpoEvhia0_ut0bA" &&
-          Date.now() - 60 * 60 * 24 * 1000 * 1 < new Date(holoDatas.start_scheduled).getTime() ? (
+          holoDatas.channel.id !== "UCWsfcksUUpoEvhia0_ut0bA" ? (
           <>
-            <a className="flex items-center gap-x-3.5 max-md:mt-[-32px] py-2 mx-[-7px] rounded-md text-sm text-gray-800 dark:text-gray-400" target="_blank" href={`${holoVideo}${holoDatas.id}`}>
-              <img className="inline-block md:h-[2.875rem] h-[3.475rem] md:w-[2.875rem] w-[3.475rem] rounded-full ring-1 ring-red-600" src={holoDatas.channel.photo} alt="Image Description" />
-            </a>
+            <div className="relative w-[250px] max-xl:w-[24%] max-mm:w-[32.5%] max-md:w-[48.5%] max-sm:w-[48%.5] max-xs:w-[48.5%] h-full flex flex-col bg-white border shadow-sm rounded-xl dark:bg-[#223e] dark:border-gray-700 dark:shadow-slate-700/[.7]">
+              <div className="absolute text-xs font-bold text-center text-gray-200 bottom-1 right-2 opacity-90 max-sm:text-[10px]">
+                <span className="mr-[1px]">◎</span>配信予定
+              </div>
+              <a href={`${holoVideo}${holoDatas.id}`} target="_blank">
+                <div className="">
+                <img className="w-full h-auto rounded-t-xl" src={youtube_jpeg + holoDatas.id + youtube_jpeg_size.large} alt="Image Description" />
+                <div className="p-3 md:p-4">
+                  <div className="text-gray-400 max-sm:text-[14px]">{dayjs(holoDatas.start_scheduled).format("MM-DD HH:mm")}</div>
+                  <h3 className="flex font-bold text-gray-800 text-md dark:text-white max-sm:text-[12px]">{holoDatas.title}</h3>
+                </div>
+                </div>
+              </a>
+            </div>
           </>
         ) : null
       })}
     </div>
   )
 }
-export default GroupIcon
+export default ScheduleCard
