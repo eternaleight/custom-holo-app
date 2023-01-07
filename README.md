@@ -36,5 +36,7 @@ https://holo-app.vercel.app
 ├── styles
 │   └── globals.css
 ├── tailwind.config.js
-└── tsconfig.json
+├── tsconfig.json
+└── utils
+    └── util.ts
 ```
