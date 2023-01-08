@@ -26,15 +26,12 @@ const Home: NextPage = () => {
       </div>
       <Hero addText={addText} />
       <h1 className="z-[1] top-[510px] md:text-[18px] text-[16px] whitespace-pre-line sm:mt-0 xs:mt-[-110px] xxs:mt-[-220px] mt-[-220px] mb-10">
-        {`W2B <span>`}
-        <form>
+        <form onSubmit={(e) => e.preventDefault()}>
           <label>
-            Name:
             <input autoComplete="off" type="text" name="name" className="mx-2 border-[1px] border-gray-800 rounded-md" value={text} onChange={(e) => setText(e.target.value)} />
           </label>
           <input type="submit" value="Submit" className="mx-2 bg-gray-100 border-[1px] border-gray-800 rounded-md px-[8px] cursor-pointer hover:bg-gray-300" onClick={onClickAddText} />
         </form>
-        {`</span>S1TE`}
       </h1>
       <Footer />
     </div>
