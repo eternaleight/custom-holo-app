@@ -1,5 +1,5 @@
 import type { NextPage } from "next"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Header from "../components/containers/header"
 import Footer from "../components/containers/footer"
 import LiveCard from "../components/atoms/liveCard"
@@ -11,9 +11,15 @@ const Home: NextPage = () => {
   const [text, setText] = useState<string>("")
   const [addText, setAddText] = useState<string>("holo-app.vercel.app")
   const onClickAddText = () => {
+    localStorage.setItem('key', text);
     setAddText(text)
     setText("")
   }
+
+  useEffect(() => {
+    console.log(localStorage.getItem('key'))
+    setAddText(localStorage.getItem('key') || "holo-app.vercel.app")
+  },[addText])
   return (
     <div className="relative flex flex-col items-center justify-end min-h-screen mx-auto overflow-x-hidden bg-white bg-gray-100">
       <Header />

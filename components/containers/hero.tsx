@@ -1,6 +1,7 @@
 interface Text {
   addText: string
 }
+
 const Pc = ({ addText }: Text) => {
   return (
     <>
