@@ -21,7 +21,7 @@ const Home: NextPage = () => {
     setAddText(localStorage.getItem('key') || "holo-app.vercel.app")
   },[addText])
   return (
-    <div className="relative flex flex-col items-center justify-end min-h-screen mx-auto overflow-x-hidden bg-white bg-gray-100">
+    <div className="relative flex flex-col items-center justify-end min-h-screen mx-auto overflow-x-hidden bg-gray-100">
       <Header />
       <div className="w-full md:hidden">
         <GroupIcon />
