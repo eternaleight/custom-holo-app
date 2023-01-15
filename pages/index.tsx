@@ -12,39 +12,48 @@ const Home: NextPage = () => {
   const [isOpen, setOpen] = useState<boolean>(false)
   const [text, setText] = useState<string>("")
   const [addText, setAddText] = useState<string>("holo-app.vercel.app")
-
-  const toggle = () => {
-    setOpen(!isOpen)
-  }
-
-  const onClickAddText = () => {
-    localStorage.setItem('key', text);
+ const toggleDrawer = () => setOpen(!isOpen)
+  const handleSubmit: any = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    localStorage.setItem("addText", text)
     setAddText(text)
     setText("")
   }
-
   useEffect(() => {
-    console.log(localStorage.getItem('key'))
-    setAddText(localStorage.getItem('key') || "holo-app.vercel.app")
-  },[addText])
+    const addText = localStorage.getItem("addText")
+    setAddText(addText || "holo-app.vercel.app")
+  }, [])
+
   return (
     <div className="relative flex flex-col items-center justify-end min-h-screen mx-auto overflow-x-hidden bg-gray-100">
-      <Header isOpen={isOpen} toggle={toggle}/>
+      <Header isOpen={isOpen} toggle={toggleDrawer} />
       <div className="w-full md:hidden">
         <GroupIcon />
       </div>
       <div className="flex flex-wrap justify-center mx-2 mt-8 md:my-8 gap-2">
-        <Drawer isOpenDrawer={isOpen}/>
+        <Drawer isOpen={isOpen} />
         <LiveCard />
         <ScheduleCard />
       </div>
       <Hero addText={addText} />
       <h1 className="z-[1] top-[510px] md:text-[18px] text-[16px] whitespace-pre-line sm:mt-0 xs:mt-[-110px] xxs:mt-[-220px] mt-[-220px] mb-10">
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form onSubmit={handleSubmit}>
           <label>
-            <input autoComplete="off" type="text" name="name" className="mx-2 border-[1px] border-gray-800 rounded-md" value={text} onChange={(e) => setText(e.target.value)} />
+            <input
+              autoComplete="off"
+              type="text"
+              name="name"
+              className="mx-2 border-[1px] border-gray-800 rounded-md"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+            />
           </label>
-          <input type="submit" value="Submit" className="mx-2 bg-gray-100 border-[1px] border-gray-800 rounded-md px-[8px] cursor-pointer hover:bg-gray-300" onClick={onClickAddText} />
+          <input
+            type="submit"
+            value="Submit"
+            className="mx-2 bg-gray-100 border-[1px] border-gray-800 rounded-md px-[8px] cursor-pointer hover:bg-gray-300"
+            onClick={handleSubmit}
+          />
         </form>
       </h1>
       <Footer />
