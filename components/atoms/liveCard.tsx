@@ -83,7 +83,7 @@ const LiveCard = () => {
                   <div className="text-gray-400 max-sm:text-[14px]">
                     {dayjs(holoDatas.start_scheduled).format("HH:mm")}
                   </div>
-                  <h3 className="flex font-bold text-gray-800 text-md text-white max-sm:text-[12px]">{holoDatas.title}</h3>
+                  <h3 className="flex font-bold text-md text-white max-sm:text-[12px]">{holoDatas.title}</h3>
                 </div>
               </a>
             </div>
