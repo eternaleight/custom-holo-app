@@ -13,12 +13,6 @@ const Drawer = ({ isOpen }:Props) => {
         <Link href="/">
           <a className="block p-3 text-gray-800">Home</a>
         </Link>
-        <Link href="/about">
-          <a className="block p-3 text-gray-800">About</a>
-        </Link>
-        <Link href="/contact">
-          <a className="block p-3 text-gray-800">Contact</a>
-        </Link>
       </nav>
       <CoinButton /> 
     </div>
