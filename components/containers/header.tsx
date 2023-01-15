@@ -1,17 +1,19 @@
 import Head from "next/head"
 import AuthButton from "../atoms/authButton"
+import CoinButton from "../atoms/coinButton"
 import GroupIcon from "../atoms/groupIcon"
 
 const Header = ({toggle,isOpen}:any) => {
   return (
     <>
-      <div className="bg-[#eaeaef] w-full h-[60px] flex items-center justify-end pr-3 gap-3">
+      <div className="bg-[#eaeaef] w-full h-[70px] flex items-center justify-end py-4 pr-3 gap-3">
+      <CoinButton /> 
         <div className="hidden md:block">
         <GroupIcon/>
         </div>
         <AuthButton isOpen={isOpen} toggle={toggle}/>
         <div className="md:block hidden absolute pl-3 top-[8px] left-[0px] cursor-pointer">
-          <div className="text-[28px]">holoApp</div>
+          <div className="text-[32px] text-slate-900">holoApp</div>
         </div>
         <span className="cursor-pointer inline-flex justify-center items-center w-[46px] h-[46px] rounded-full border border-gray-400 text-gray-400">
           <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
