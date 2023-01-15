@@ -34,7 +34,7 @@ const ScheduleCard = () => {
                 <img className="w-full h-auto rounded-t-xl" src={youtube_jpeg + holoDatas.id + youtube_jpeg_size.large} alt="Image Description" />
                 <div className="p-3 md:p-4">
                   <div className="text-gray-400 max-sm:text-[14px]">{dayjs(holoDatas.start_scheduled).format("MM-DD HH:mm")}</div>
-                  <h3 className="flex font-bold text-gray-800 text-md text-white max-sm:text-[12px]">{holoDatas.title}</h3>
+                  <h3 className="flex font-bold text-md text-white max-sm:text-[12px]">{holoDatas.title}</h3>
                 </div>
                 </div>
               </a>
