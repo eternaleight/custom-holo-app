@@ -10,11 +10,12 @@
 /* cubic-bezier(0.77, 0.2, 0.05, 1) //easeInOutQuart */
 /* cubic-bezier(0.785, 0.135, 0.15, 0.86) //easeInBack */
 /* cubic-bezier(0.23, 1, 0.32, 1) //easeOutQuint */
+
 body {
   background: #f3f4f6;
 }
 
-:root{
+:root {
   --easeInOutQuart: cubic-bezier(0.77, 0.2, 0.05, 1);
   --easeInBack: cubic-bezier(0.785, 0.135, 0.15, 0.86);
   --easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
@@ -25,32 +26,45 @@ button {
   border-radius: 6px;
   color: white;
   font-size: 15px;
-  font-family: 'Comfortaa';
+  font-family: "Comfortaa";
   transition: 0.2s var(--easeOutQuint);
 }
 
-/* .card-box .card { */
-/*     position:relative; */
-/*     overflow:hidden; */
-/* } */
- 
-/*     .card-box .card::before { */
-/*         position:absolute; */
-/*         top:0; */
-/*         left:-100%; */
-/*         bottom:0; */
-/*         margin:auto 0; */
-/*         width:100px; */
-/*         height:200%; */
-/*         content:""; */
-/*         background:linear-gradient(to right, #fff, #fff 10%, transparent 10%, transparent 20%, #fff 20%, #fff 90%, transparent 90%, transparent 94%, #fff 94%); */
-/*         opacity:0.3; */
-/*         transform:translate(-50%) rotate(45deg); */
-/*         transition:left 0.4s ease-in, transform 0.4s ease-in; */
-/*     } */
- 
-/*     .card-box .card:hover::before { */
-/*         left:150%; */
-/*         transform:translate(50%) rotate(45deg); */
-/*         transition-timing-function:ease-out, ease-out; */
-/*     } */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 230px;
+  background-color: #29384728;
+  z-index: 100;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+}
+
+.drawer.active {
+  transform: translateY(0);
+}
+@media screen and (max-width: 780px) {
+  .drawer {
+  transform: translateY(-100%);
+    width: 30%;
+  }
+.drawer.active {
+  transform: translateX(0);
+}
+}
+
+.google_map{
+position:relative;
+width:100%;
+height:0;
+padding-top:75%;
+}
+.google_map iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+}

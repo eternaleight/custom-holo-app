@@ -6,10 +6,18 @@ import LiveCard from "../components/atoms/liveCard"
 import Hero from "../components/containers/hero"
 import ScheduleCard from "../components/atoms/scheduleCard"
 import GroupIcon from "../components/atoms/groupIcon"
+import Drawer from "../components/containers/drawer"
+import HoverVideo from "../components/atoms/hoverStream"
 
 const Home: NextPage = () => {
+  const [isOpen, setOpen] = useState(false)
   const [text, setText] = useState<string>("")
   const [addText, setAddText] = useState<string>("holo-app.vercel.app")
+
+  const toggle = () => {
+    setOpen(!isOpen)
+  }
+
   const onClickAddText = () => {
     localStorage.setItem('key', text);
     setAddText(text)
@@ -22,11 +30,14 @@ const Home: NextPage = () => {
   },[addText])
   return (
     <div className="relative flex flex-col items-center justify-end min-h-screen mx-auto overflow-x-hidden bg-gray-100">
-      <Header />
+      {String(isOpen)}
+      <Header toggle={toggle}/>
       <div className="w-full md:hidden">
         <GroupIcon />
       </div>
       <div className="flex flex-wrap justify-center mx-2 mt-8 md:my-8 gap-2">
+        <HoverVideo videoId={'V9MaQ5PjUxA'}/>
+        <Drawer isOpenDrawer={isOpen}/>
         <LiveCard />
         <ScheduleCard />
       </div>
