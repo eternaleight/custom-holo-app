@@ -1,6 +1,7 @@
 import dayjs from "dayjs"
 import { useEffect, useState } from "react"
 import { isCorrectLiveHoloUrl } from "../../utils/util"
+import HoverVideo from "./hoverStream"
 
 export type Api = {
   available_at: string
@@ -32,6 +33,7 @@ const LiveCard = () => {
   }
   const holoVideo = "https://www.youtube.com/watch?v="
   const holoUrl = "https://holodex.net/api/v2/live/"
+  const [isHovering, setIsHovering] = useState<number>(-1)
   const [holoData, setHoloData] = useState<Api[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   useEffect(() => {
@@ -48,22 +50,39 @@ const LiveCard = () => {
     <>
       {loading ? (
         <>
-          <div className="fixed z-[2] top-[40%] animate-spin inline-block w-10 h-10 border-[3px] border-current border-t-transparent text-[#F3F4F6] rounded-full" role="status" aria-label="loading">
+          <div
+            className="fixed z-[2] top-[40%] animate-spin inline-block w-10 h-10 border-[3px] border-current border-t-transparent text-[#F3F4F6] rounded-full"
+            role="status"
+            aria-label="loading"
+          >
             <span className="sr-only">Loading...</span>
           </div>
         </>
       ) : null}
-      {holoData.map((holoDatas: Api) => {
+      {holoData.map((holoDatas: Api, index) => {
         return isCorrectLiveHoloUrl(holoDatas) ? (
           <>
-            <div className="relative w-[23%] max-xl:w-[24%] max-lg:w-[32%] max-mm:w-[48.5%] max-md:w-[48.5%] max-sm:w-[48.5%] max-xs:w-[48.5%] h-full flex flex-col border shadow-sm rounded-xl bg-gray-800 border-gray-700 shadow-slate-700/[.7]">
+            <div
+              className="relative w-[23%] max-xl:w-[24%] max-lg:w-[32%] max-mm:w-[48.5%] max-md:w-[48.5%] max-sm:w-[48.5%] max-xs:w-[48.5%] h-full flex flex-col border shadow-sm rounded-xl bg-gray-800 border-gray-700 shadow-slate-700/[.7]"
+              onMouseEnter={() => setIsHovering(index)}
+              onMouseLeave={() => setIsHovering(-1)}
+            >
+              <div className={`${isHovering === index ?'':'absolute z-[-1]'}`}>
+                <HoverVideo videoId={holoDatas.id} isHovering={isHovering === index} />
+              </div>
               <div className="absolute text-xs font-bold text-center text-red-500 bottom-1 right-2 opacity-90 max-sm:text-[10px]">
                 <span className="mr-[1px]">●</span>REC
               </div>
               <a href={`${holoVideo}${holoDatas.id}`} target="_blank">
-                <img className="w-full h-auto rounded-t-xl" src={youtube_jpeg + holoDatas.id + youtube_jpeg_size.large} alt="Image Description" />
+                <img
+                  className="w-full h-auto rounded-t-xl"
+                  src={youtube_jpeg + holoDatas.id + youtube_jpeg_size.large}
+                  alt="Image Description"
+                />
                 <div className="p-2 md:p-3">
-                  <div className="text-gray-400 max-sm:text-[14px]">{dayjs(holoDatas.start_scheduled).format("HH:mm")}</div>
+                  <div className="text-gray-400 max-sm:text-[14px]">
+                    {dayjs(holoDatas.start_scheduled).format("HH:mm")}
+                  </div>
                   <h3 className="flex font-bold text-gray-800 text-md text-white max-sm:text-[12px]">{holoDatas.title}</h3>
                 </div>
               </a>

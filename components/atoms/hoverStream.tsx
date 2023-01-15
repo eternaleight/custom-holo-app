@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 
-const HoverVideo = ({ videoId }: any) => {
-  const [isHovering, setIsHovering] = useState(false)
+const HoverVideo = ({ videoId,isHovering }: any) => {
 
   useEffect(() => {
     const iframe: any = document.getElementById(videoId)
@@ -13,17 +12,18 @@ const HoverVideo = ({ videoId }: any) => {
   }, [isHovering, videoId])
 
   return (
-    <div onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+    <div className="w-full h-full">
+      <div className={`w-full ${isHovering ? "fixed w-[50%] h-[34vw] mx-auto bottom-8 right-8 z-[2]": null}`}>
       <iframe
         id={videoId}
         title={videoId}
-        width="640"
-        height="360"
+        className="w-full h-full"
         src={`https://www.youtube.com/embed/${videoId}`}
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
+    </div>
     </div>
   )
 }
