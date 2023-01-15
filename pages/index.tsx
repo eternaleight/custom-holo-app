@@ -10,7 +10,7 @@ import Drawer from "../components/containers/drawer"
 import HoverVideo from "../components/atoms/hoverStream"
 
 const Home: NextPage = () => {
-  const [isOpen, setOpen] = useState(false)
+  const [isOpen, setOpen] = useState<boolean>(false)
   const [text, setText] = useState<string>("")
   const [addText, setAddText] = useState<string>("holo-app.vercel.app")
 
@@ -30,8 +30,7 @@ const Home: NextPage = () => {
   },[addText])
   return (
     <div className="relative flex flex-col items-center justify-end min-h-screen mx-auto overflow-x-hidden bg-gray-100">
-      {String(isOpen)}
-      <Header toggle={toggle}/>
+      <Header isOpen={isOpen} toggle={toggle}/>
       <div className="w-full md:hidden">
         <GroupIcon />
       </div>
