@@ -6,9 +6,9 @@ const HoverVideo = ({ videoId }: any) => {
   useEffect(() => {
     const iframe: any = document.getElementById(videoId)
     if (isHovering) {
-      iframe.src += "?autoplay=1"
+      iframe.src += "?autoplay=1&mute=1"
     } else {
-      iframe.src = iframe.src.replace("?autoplay=1", "")
+      iframe.src = iframe.src.replace("?autoplay=1&mute=1", "")
     }
   }, [isHovering, videoId])
 
