@@ -7,7 +7,6 @@ import Hero from "../components/containers/hero"
 import ScheduleCard from "../components/atoms/scheduleCard"
 import GroupIcon from "../components/atoms/groupIcon"
 import Drawer from "../components/containers/drawer"
-import HoverVideo from "../components/atoms/hoverStream"
 
 const Home: NextPage = () => {
   const [isOpen, setOpen] = useState<boolean>(false)
