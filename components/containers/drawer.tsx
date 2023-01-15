@@ -1,4 +1,5 @@
 import Link from "next/link"
+import CoinButton from "../atoms/coinButton"
 
 interface Props {
   isOpen: boolean
@@ -19,6 +20,7 @@ const Drawer = ({ isOpen }:Props) => {
           <a className="block p-3 text-gray-800">Contact</a>
         </Link>
       </nav>
+      <CoinButton /> 
     </div>
   )
 }

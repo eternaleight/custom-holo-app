@@ -29,7 +29,7 @@ const CoinButton: React.FC = () => {
   };
 
   return (
-    <div className="p-1">
+    <div className="p-2 text-white">
       <div className="text-[14px]">
       １日１回
       </div>

@@ -1,13 +1,11 @@
 import Head from "next/head"
 import AuthButton from "../atoms/authButton"
-import CoinButton from "../atoms/coinButton"
 import GroupIcon from "../atoms/groupIcon"
 
 const Header = ({toggle,isOpen}:any) => {
   return (
     <>
       <div className="bg-[#eaeaef] w-full h-[70px] flex items-center justify-end py-4 pr-3 gap-3">
-      <CoinButton /> 
         <div className="hidden md:block">
         <GroupIcon/>
         </div>
