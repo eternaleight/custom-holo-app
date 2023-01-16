@@ -67,7 +67,7 @@ const LiveCard = () => {
               onMouseEnter={() => setIsHovering(index)}
               onMouseLeave={() => setIsHovering(-1)}
             >
-              <div className={`${isHovering === index ?'':'absolute z-[-1]'}`}>
+              <div className={`${isHovering === index ? "" : "absolute z-[-1]"} max-sm:hidden`}>
                 <HoverVideo videoId={holoDatas.id} isHovering={isHovering === index} />
               </div>
               <div className="absolute text-xs font-bold text-center text-red-500 bottom-1 right-2 opacity-90 max-sm:text-[10px]">
@@ -83,7 +83,9 @@ const LiveCard = () => {
                   <div className="text-gray-400 max-sm:text-[14px]">
                     {dayjs(holoDatas.start_scheduled).format("HH:mm")}
                   </div>
-                  <h3 className="flex font-bold text-md text-white max-sm:text-[12px]">{holoDatas.title}</h3>
+                  <h3 className="flex font-bold text-md text-white max-sm:text-[12px]">
+                    {holoDatas.title}
+                  </h3>
                 </div>
               </a>
             </div>
