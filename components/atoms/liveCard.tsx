@@ -1,5 +1,5 @@
 import dayjs from "dayjs"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { isCorrectLiveHoloUrl } from "../../utils/util"
 import HoverVideo from "./hoverStream"
 
@@ -36,6 +36,26 @@ const LiveCard = () => {
   const [isHovering, setIsHovering] = useState<number>(-1)
   const [holoData, setHoloData] = useState<Api[]>([])
   const [loading, setLoading] = useState<boolean>(true)
+  const [isHidden, setIsHidden] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (ref.current) {
+        if (window.innerWidth < 639) {
+          ref.current.style.display = "none"
+          setIsHidden(true)
+        } else {
+          ref.current.style.display = "block"
+          setIsHidden(false)
+        }
+      }
+    }
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [ref])
+
   useEffect(() => {
     setLoading(true)
     ;(async () => {
@@ -67,7 +87,11 @@ const LiveCard = () => {
               onMouseEnter={() => setIsHovering(index)}
               onMouseLeave={() => setIsHovering(-1)}
             >
-              <div className={`${isHovering === index ? "" : "absolute z-[-1]"} max-sm:hidden`}>
+              <div
+                className={`${isHovering === index ? "" : "absolute z-[-1]"}`}
+                ref={ref}
+                style={{ display: isHidden ? "none" : "block" }}
+              >
                 <HoverVideo videoId={holoDatas.id} isHovering={isHovering === index} />
               </div>
               <div className="absolute text-xs font-bold text-center text-red-500 bottom-1 right-2 opacity-90 max-sm:text-[10px]">
