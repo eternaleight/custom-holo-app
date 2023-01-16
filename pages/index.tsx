@@ -32,7 +32,7 @@ const Home: NextPage = () => {
         <GroupIcon />
       </div>
       <div className="flex flex-wrap justify-center mx-2 mt-8 md:my-8 gap-2">
-        <Drawer isOpen={isOpen} />
+        <Drawer toggleDrawer={toggleDrawer} isOpen={isOpen} />
         <LiveCard />
         <ScheduleCard />
       </div>
