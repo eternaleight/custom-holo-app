@@ -7,10 +7,13 @@ import Hero from "../components/containers/hero"
 import ScheduleCard from "../components/atoms/scheduleCard"
 import GroupIcon from "../components/atoms/groupIcon"
 import Drawer from "../components/containers/drawer"
-import CoinButton from "../components/atoms/coinButton"
 
 const Home: NextPage = () => {
   const [isOpen, setOpen] = useState<boolean>(false)
+  const [previewHidden, setPreviewHidden] = useState<boolean>(false)
+  const handleHidden = () => {
+    setPreviewHidden(!previewHidden)
+  }
   const [text, setText] = useState<string>("")
   const [addText, setAddText] = useState<string>("holo-app.vercel.app")
  const toggleDrawer = () => setOpen(!isOpen)
@@ -27,13 +30,13 @@ const Home: NextPage = () => {
 
   return (
     <div className="relative flex flex-col items-center justify-end min-h-screen mx-auto overflow-x-hidden bg-gray-100">
-      <Header isOpen={isOpen} toggle={toggleDrawer} />
+      <Header isOpen={isOpen} toggle={toggleDrawer} handleHidden={handleHidden} />
       <div className="w-full md:hidden">
         <GroupIcon />
       </div>
       <div className="flex flex-wrap justify-center mx-2 mt-8 md:my-8 gap-2">
         <Drawer toggleDrawer={toggleDrawer} isOpen={isOpen} />
-        <LiveCard />
+        <LiveCard previewHidden={previewHidden}/>
         <ScheduleCard />
       </div>
       <Hero addText={addText} />
