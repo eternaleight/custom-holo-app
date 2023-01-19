@@ -2,14 +2,14 @@ import Head from "next/head"
 import AuthButton from "../atoms/authButton"
 import GroupIcon from "../atoms/groupIcon"
 
-const Header = ({toggle,isOpen}:any) => {
+const Header = ({toggle,isOpen,handleHidden}:any) => {
   return (
     <>
       <div className="bg-[#eaeaef] w-full h-[70px] flex items-center justify-end py-4 pr-3 gap-3">
         <div className="hidden md:block">
         <GroupIcon/>
         </div>
-        <AuthButton isOpen={isOpen} toggle={toggle}/>
+        <AuthButton isOpen={isOpen} toggle={toggle} handleHidden={handleHidden}/>
         <div className="md:block hidden absolute pl-3 top-[8px] left-[0px] cursor-pointer">
           <div className="text-[32px] text-slate-900">holoApp</div>
         </div>

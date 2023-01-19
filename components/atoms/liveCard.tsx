@@ -25,7 +25,7 @@ export type Api = {
   type: string
 }
 
-const LiveCard = () => {
+const LiveCard = ({ previewHidden }: { previewHidden: boolean }) => {
   const youtube_jpeg = "https://img.youtube.com/vi/"
   const youtube_jpeg_size = {
     large: "/maxresdefault.jpg",
@@ -37,7 +37,12 @@ const LiveCard = () => {
   const [holoData, setHoloData] = useState<Api[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   const [isHidden, setIsHidden] = useState(false)
+  const [fixedVideo, setFixedVideo] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
+
+  const handleFixed = () => {
+    setFixedVideo(!fixedVideo)
+  }
 
   useEffect(() => {
     const handleResize = () => {
@@ -84,9 +89,19 @@ const LiveCard = () => {
           <>
             <div
               className="relative w-[23%] max-xl:w-[24%] max-lg:w-[32%] max-mm:w-[48.5%] max-md:w-[48.5%] max-sm:w-[48.5%] max-xs:w-[48.5%] h-full flex flex-col border shadow-sm rounded-xl bg-gray-800 border-gray-700 shadow-slate-700/[.7]"
-              onMouseEnter={() => setIsHovering(index)}
-              onMouseLeave={() => setIsHovering(-1)}
+              onMouseEnter={!fixedVideo ? () => setIsHovering(index) : undefined}
+              onMouseLeave={!fixedVideo ? () => setIsHovering(-1) : undefined}
             >
+              {previewHidden ? (
+                <button
+                  className={`${
+                    fixedVideo ? "opacity-80 hover:opacity-100" : "opacity-30 hover:opacity-100"
+                  }`}
+                  onClick={handleFixed}
+                >
+                  🧷 Preview固定 {fixedVideo ? "on" : "off"}
+                </button>
+              ) : undefined}
               <div
                 className={`${isHovering === index ? "" : "absolute z-[-1]"}`}
                 ref={ref}
