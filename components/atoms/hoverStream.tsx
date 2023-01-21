@@ -1,25 +1,28 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 
-const HoverVideo = ({ videoId, isHovering }: any) => {
-  const [mute, setMute] = useState(true)
+const HoverVideo = ({ videoId, isHovering }: { videoId: string; isHovering: boolean }) => {
+  const [mute, setMute] = useState<boolean>(true)
+  const iframeRef = useRef<HTMLIFrameElement>(null)
   const handleMute = () => {
     setMute(!mute)
-    const iframe: any = document.getElementById(videoId)
-    if (mute) {
-      iframe.src += "?mute=1"
-    } else {
-      iframe.src = iframe.src.replace("?mute=1", "")
+    if (iframeRef.current) {
+      if (mute) {
+        iframeRef.current.src += "?mute=1"
+      } else {
+        iframeRef.current.src = iframeRef.current.src.replace("?mute=1", "")
+      }
     }
   }
 
   useEffect(() => {
-    const iframe: any = document.getElementById(videoId)
-    if (isHovering) {
-      iframe.src += "?autoplay=1&mute=1"
-    } else {
-      iframe.src = iframe.src.replace("?autoplay=1&mute=1", "")
+    if (iframeRef.current) {
+      if (isHovering) {
+        iframeRef.current.src += "?autoplay=1&mute=1"
+      } else {
+        iframeRef.current.src = iframeRef.current.src.replace("?autoplay=1&mute=1", "")
+      }
     }
-  }, [isHovering, videoId])
+  }, [isHovering, iframeRef])
 
   return (
     <div className="w-full h-full">
@@ -35,7 +38,7 @@ const HoverVideo = ({ videoId, isHovering }: any) => {
         }`}
       >
         <iframe
-          id={videoId}
+          ref={iframeRef}
           title={videoId}
           className="w-full h-full"
           src={`https://www.youtube.com/embed/${videoId}`}

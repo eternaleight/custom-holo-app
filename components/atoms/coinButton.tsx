@@ -2,18 +2,14 @@ import { useState, useEffect } from "react"
 
 const CoinButton: React.FC = () => {
   // コインの数を管理するstate
-  const [coins, setCoins] = useState(0)
+  const [coins, setCoins] = useState<number>(0)
   // 今日のボタンのクリック状態を管理するstate
-  const [clicked, setClicked] = useState(false)
+  const [clicked, setClicked] = useState<boolean>(false)
 
-  // componentDidMount
   useEffect(() => {
-    // ローカルストレージから日付を取得
-    const dateString = localStorage.getItem("date")
-      // 日付があり、今日の日付の場合は、ローカルストレージからコインの数を取得
-      const coinCount = localStorage.getItem("coins")
-      if (coinCount) {
-        setCoins(parseInt(coinCount))
+    const coinCount = localStorage.getItem("coins")
+    if (coinCount) {
+      setCoins(parseInt(coinCount))
     }
   }, [])
 
