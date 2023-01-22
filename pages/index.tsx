@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   }
   const [text, setText] = useState<string>("")
   const [addText, setAddText] = useState<string>("holo-app.vercel.app")
- const toggleDrawer = () => setOpen(!isOpen)
+  const toggleDrawer = () => setOpen(!isOpen)
   const handleSubmit: any = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     localStorage.setItem("addText", text)
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
       </div>
       <div className="flex flex-wrap justify-center mx-2 mt-8 md:my-8 gap-2">
         <Drawer toggleDrawer={toggleDrawer} isOpen={isOpen} />
-        <LiveCard previewHidden={previewHidden}/>
+        <LiveCard previewHidden={previewHidden} />
         <ScheduleCard />
       </div>
       <Hero addText={addText} />
