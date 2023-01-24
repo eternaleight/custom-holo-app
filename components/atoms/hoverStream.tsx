@@ -27,7 +27,7 @@ const HoverVideo = ({ videoId, isHovering }: { videoId: string; isHovering: bool
   return (
     <div className="w-full h-full">
       <div className="absolute top-0 right-1">
-        <button className="" onClick={handleMute}>
+        <button className=" hover:brightness-[0.95] active:scale-[0.95]" onClick={handleMute}>
           {mute ? "Unmute" : "Mute"}
         </button>
       </div>
