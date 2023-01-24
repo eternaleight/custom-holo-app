@@ -21,8 +21,7 @@ https://holo-app.vercel.app
 ├── README.md
 ├── components
 │   ├── atoms
-│   ├── containers
-│   └── templates
+│   └── containers
 ├── next-env.d.ts
 ├── next.config.js
 ├── node_modules
