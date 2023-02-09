@@ -35,7 +35,7 @@ const CoinButton: React.FC = () => {
         コインを受け取る
       </button>
       <div className="text-[14px]">: {coins}💰 </div>
-      <div className="ml-20">
+      <div className="ml-[60px]">
         <LikeButton />
       </div>
     </div>
