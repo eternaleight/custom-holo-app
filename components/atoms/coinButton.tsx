@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import LikeButton from "./likeButton"
 
 const CoinButton: React.FC = () => {
   // コインの数を管理するstate
@@ -34,6 +35,9 @@ const CoinButton: React.FC = () => {
         コインを受け取る
       </button>
       <div className="text-[14px]">: {coins}💰 </div>
+      <div className="ml-40">
+        <LikeButton />
+      </div>
     </div>
   )
 }
