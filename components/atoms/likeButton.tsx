@@ -28,22 +28,13 @@ function LikeButton() {
   }, [isLiked, isLiked2, isLiked3])
   return (
     <>
-      <button
-        className="bg-transparent cursor-default"
-        onClick={() => setIsLiked(!isLiked)}
-      >
+      <button className="bg-transparent cursor-default" onClick={() => setIsLiked(!isLiked)}>
         <HeartIcon filled={isLiked ? true : false} />
       </button>
-      <button
-        className="bg-transparent cursor-default"
-        onClick={() => setIsLiked2(!isLiked2)}
-      >
+      <button className="bg-transparent cursor-default" onClick={() => setIsLiked2(!isLiked2)}>
         <HeartIcon filled={isLiked2 ? true : false} />
       </button>
-      <button
-        className="bg-transparent cursor-default"
-        onClick={() => setIsLiked3(!isLiked3)}
-      >
+      <button className="bg-transparent cursor-default" onClick={() => setIsLiked3(!isLiked3)}>
         <HeartIcon filled={isLiked3 ? true : false} />
       </button>
     </>

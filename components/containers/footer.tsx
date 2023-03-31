@@ -7,7 +7,11 @@ const Footer = () => {
             {/* <!-- Grid --> */}
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
               <div className="col-span-full lg:col-span-1">
-                <a className="flex-none text-xl font-semibold text-white" href="#" aria-label="Brand">
+                <a
+                  className="flex-none text-xl font-semibold text-white"
+                  href="#"
+                  aria-label="Brand"
+                >
                   Brand
                 </a>
               </div>
@@ -54,7 +58,9 @@ const Footer = () => {
                     <a className="inline-flex text-gray-400 gap-x-2 hover:text-gray-200" href="#">
                       Careers
                     </a>{" "}
-                    <span className="inline px-2 py-1 ml-1 text-xs text-white bg-blue-700 rounded-md">We're hiring</span>
+                    <span className="inline px-2 py-1 ml-1 text-xs text-white bg-blue-700 rounded-md">
+                      We're hiring
+                    </span>
                   </p>
                   <p>
                     <a className="inline-flex text-gray-400 gap-x-2 hover:text-gray-200" href="#">
@@ -74,9 +80,18 @@ const Footer = () => {
                       <label htmlFor="hero-input" className="sr-only">
                         Search
                       </label>
-                      <input type="text" id="hero-input" name="hero-input" className="block w-full px-4 py-3 border-transparent shadow-sm rounded-md focus:z-10 focus:border-blue-500 focus:ring-blue-500" placeholder="Enter your email" />
+                      <input
+                        type="text"
+                        id="hero-input"
+                        name="hero-input"
+                        className="block w-full px-4 py-3 border-transparent shadow-sm rounded-md focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                        placeholder="Enter your email"
+                      />
                     </div>
-                    <a className="inline-flex items-center justify-center w-full px-4 py-3 font-medium text-center text-white bg-blue-600 border border-transparent sm:w-auto whitespace-nowrap gap-x-3 hover:bg-blue-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition" href="#">
+                    <a
+                      className="inline-flex items-center justify-center w-full px-4 py-3 font-medium text-center text-white bg-blue-600 border border-transparent sm:w-auto whitespace-nowrap gap-x-3 hover:bg-blue-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition"
+                      href="#"
+                    >
                       Subscribe
                     </a>
                   </div>
@@ -95,8 +110,18 @@ const Footer = () => {
 
               {/* <!-- Social Brands --> */}
               <div>
-                <a className="inline-flex justify-center items-center gap-x-3.5 w-10 h-10 text-center text-gray-200 hover:bg-white/[.1] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900 transition" href="https://github.com/eternaleight/holo-app">
-                  <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <a
+                  className="inline-flex justify-center items-center gap-x-3.5 w-10 h-10 text-center text-gray-200 hover:bg-white/[.1] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900 transition"
+                  href="https://github.com/eternaleight/holo-app"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                   </svg>
                 </a>
