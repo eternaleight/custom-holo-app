@@ -18,25 +18,26 @@ https://holo-app.vercel.app
 ## Project structure
 ```
 .
-├── README.md
-├── components
-│   ├── atoms
-│   └── layouts
-├── next-env.d.ts
-├── next.config.js
-├── node_modules
-├── package-lock.json
-├── package.json
-├── pages
-│   ├── _app.tsx
-│   └── index.tsx
-├── postcss.config.js
-├── prettier.config.js
-├── public
-├── styles
-│   └── globals.css
-├── tailwind.config.js
-├── tsconfig.json
-└── utils
-    └── util.ts
+├── README.md                      // プロジェクトの説明やドキュメンテーション
+├── components                     // Reactコンポーネントが格納されているディレクトリ
+│   ├── atoms                      // 小さな再利用可能なコンポーネント
+│   └── layouts                    // 大きなコンポーネントやページのレイアウト
+├── lib                            // プロジェクトで使用される外部ライブラリや関数を含むディレクトリ
+│   └── gtag.ts                    // Google Analyticsの設定
+├── next-env.d.ts                  // Next.jsのTypeScript型の定義
+├── next.config.js                 // Next.jsの設定
+├── package.json                   // プロジェクトの依存関係やスクリプトが含まれている。
+├── pages                          // Next.jsのページコンポーネントが格納されているディレクトリ
+│   ├── _app.tsx                   // 全てのページで共通のレイアウトや設定を定義
+│   └── index.tsx                  // ホームページのコンポーネント
+├── postcss.config.js              // PostCSSの設定
+├── prettier.config.js             // Prettierの設定
+├── public                         // 静的ファイルが格納されているディレクトリ
+├── styles                         // styleのディレクトリ
+│   └── globals.css                // グローバルCSS
+├── tailwind.config.js             // Tailwind CSSの設定
+├── tsconfig.json                  // TypeScriptの設定
+├── utils                          // ユーティリティ関数が含まれているディレクトリ
+│   └── util.ts                    // 表示するチャンネルの判定をする関数ファイル
+└── yarn.lock                      // Yarnパッケージマネージャが生成する依存関係のロックファイル
 ```
