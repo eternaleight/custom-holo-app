@@ -1,4 +1,7 @@
 {
+  "name": "holo-app",
+  "version": "1.0.0",
+  "main": "index.js",
   "private": true,
   "scripts": {
     "dev": "next dev",
