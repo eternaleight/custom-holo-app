@@ -1,12 +1,12 @@
 import type { NextPage } from "next"
 import { useEffect, useState } from "react"
-import Header from "../components/containers/header"
-import Footer from "../components/containers/footer"
+import Header from "../components/layouts/header"
+import Footer from "../components/layouts/footer"
 import LiveCard from "../components/atoms/liveCard"
-import Hero from "../components/containers/hero"
+import Hero from "../components/layouts/hero"
 import ScheduleCard from "../components/atoms/scheduleCard"
 import GroupIcon from "../components/atoms/groupIcon"
-import Drawer from "../components/containers/drawer"
+import Drawer from "../components/layouts/drawer"
 
 const Home: NextPage = () => {
   const [isOpen, setOpen] = useState<boolean>(false)
