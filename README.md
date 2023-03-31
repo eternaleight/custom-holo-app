@@ -23,7 +23,7 @@ https://holo-app.vercel.app
 │   ├── atoms                      // 小さな再利用可能なコンポーネント
 │   └── layouts                    // 大きなコンポーネントやページのレイアウト
 ├── lib                            // プロジェクトで使用される外部ライブラリや関数を含むディレクトリ
-│   └── gtag.ts                    // Google Analyticsの設定
+│   └── gtag.ts                    // GoogleAnalyticsの設定
 ├── next-env.d.ts                  // Next.jsのTypeScript型の定義
 ├── next.config.js                 // Next.jsの設定
 ├── package.json                   // プロジェクトの依存関係やスクリプトが含まれている。
@@ -33,9 +33,9 @@ https://holo-app.vercel.app
 ├── postcss.config.js              // PostCSSの設定
 ├── prettier.config.js             // Prettierの設定
 ├── public                         // 静的ファイルが格納されているディレクトリ
-├── styles                         // styleのディレクトリ
-│   └── globals.css                // グローバルCSS
-├── tailwind.config.js             // Tailwind CSSの設定
+├── styles                         // Styleのディレクトリ
+│   └── globals.css                // グローバルCSSファイル
+├── tailwind.config.js             // TailwindCSSの設定
 ├── tsconfig.json                  // TypeScriptの設定
 ├── utils                          // ユーティリティ関数が含まれているディレクトリ
 │   └── util.ts                    // 表示するチャンネルの判定をする関数ファイル
