@@ -1,7 +1,13 @@
 import AuthButton from "../atoms/authButton"
 import GroupIcon from "../atoms/groupIcon"
 
-const Header = ({ toggle, isOpen, handleHidden }: any) => {
+interface Props {
+  isOpen: boolean
+  toggle: () => void
+  handleHidden: () => void
+}
+
+const Header = ({ isOpen, toggle, handleHidden }: Props) => {
   return (
     <>
       <div className="bg-[#eaeaef] w-full h-[70px] flex items-center justify-end py-4 pr-3 gap-3">

@@ -11,13 +11,13 @@ import Drawer from "../components/layouts/drawer"
 const Home: NextPage = () => {
   const [isOpen, setOpen] = useState<boolean>(false)
   const [previewHidden, setPreviewHidden] = useState<boolean>(false)
-  const handleHidden = () => {
-    setPreviewHidden(!previewHidden)
-  }
+  const handleHidden = () => setPreviewHidden(!previewHidden)
+
   const [text, setText] = useState<string>("")
   const [addText, setAddText] = useState<string>("holo-app.vercel.app")
   const toggleDrawer = () => setOpen(!isOpen)
-  const handleSubmit: any = (e: React.FormEvent<HTMLFormElement>) => {
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     localStorage.setItem("addText", text)
     setAddText(text)
@@ -56,7 +56,6 @@ const Home: NextPage = () => {
             type="submit"
             value="Submit"
             className="mx-2 bg-gray-100 border-[1px] border-gray-800 rounded-md px-[8px] cursor-pointer hover:bg-gray-300"
-            onClick={handleSubmit}
           />
         </form>
       </h1>

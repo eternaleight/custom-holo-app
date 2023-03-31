@@ -1,9 +1,9 @@
 interface Props {
-  toggle: () => void
   isOpen: boolean
+  toggle: () => void
   handleHidden: () => void
 }
-const AuthButton = ({ toggle, isOpen, handleHidden }: Props) => {
+const AuthButton = ({ isOpen, toggle, handleHidden }: Props) => {
   return (
     <div className="flex">
       <button
