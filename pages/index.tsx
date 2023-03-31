@@ -1,4 +1,3 @@
-import type { NextPage } from "next"
 import { useEffect, useState } from "react"
 import Header from "../components/layouts/header"
 import Footer from "../components/layouts/footer"
@@ -8,7 +7,7 @@ import ScheduleCard from "../components/atoms/scheduleCard"
 import GroupIcon from "../components/atoms/groupIcon"
 import Drawer from "../components/layouts/drawer"
 
-const Home: NextPage = () => {
+export default function Home() {
   const [isOpen, setOpen] = useState<boolean>(false)
   const [previewHidden, setPreviewHidden] = useState<boolean>(false)
   const handleHidden = () => setPreviewHidden(!previewHidden)
@@ -63,5 +62,3 @@ const Home: NextPage = () => {
     </div>
   )
 }
-
-export default Home
