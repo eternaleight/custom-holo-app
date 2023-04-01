@@ -2,7 +2,7 @@ interface Text {
   addText: string
 }
 
-const Pc = ({ addText }: Text) => {
+const Hero = ({ addText }: Text) => {
   return (
     <>
       <figure className="mx-auto lg:px-0 px-8 md:my-20 mt-10 relative z-[1] max-w-full w-[50rem] h-[480px] rounded-b-lg ">
@@ -35,4 +35,4 @@ const Pc = ({ addText }: Text) => {
     </>
   )
 }
-export default Pc
+export default Hero
