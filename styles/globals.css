@@ -4,13 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* $easeInOutQuart: cubic-bezier(0.77, 0.2, 0.05, 1); */
-/* $easeInBack: cubic-bezier(0.785, 0.135, 0.15, 0.86); */
-/* $easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1); */
-/* cubic-bezier(0.77, 0.2, 0.05, 1) //easeInOutQuart */
-/* cubic-bezier(0.785, 0.135, 0.15, 0.86) //easeInBack */
-/* cubic-bezier(0.23, 1, 0.32, 1) //easeOutQuint */
-
 body {
   background: #f3f4f6;
 }
@@ -47,24 +40,10 @@ button {
 }
 @media screen and (max-width: 780px) {
   .drawer {
-  transform: translateY(-100%);
+    transform: translateY(-100%);
     width: 30%;
   }
-.drawer.active {
-  transform: translateX(0);
-}
-}
-
-.google_map{
-position:relative;
-width:100%;
-height:0;
-padding-top:75%;
-}
-.google_map iframe{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
+  .drawer.active {
+    transform: translateX(0);
+  }
 }
