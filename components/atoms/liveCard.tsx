@@ -1,7 +1,7 @@
 import dayjs from "dayjs"
 import { useEffect, useRef, useState } from "react"
 import { isCorrectLiveHoloUrl } from "../../utils/util"
-import HoverVideo from "./hoverStream"
+import HoverVideo from "./hoverVideo"
 
 export type Api = {
   available_at: string
