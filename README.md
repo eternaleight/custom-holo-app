@@ -33,7 +33,7 @@ https://holo-app.vercel.app
 ├── postcss.config.js              // PostCSSの設定
 ├── prettier.config.js             // Prettierの設定
 ├── public                         // 静的ファイルが格納されているディレクトリ
-├── styles                         // Styleのディレクトリ
+├── styles                         // スタイルシートを配置するディレクトリ
 │   └── globals.css                // グローバルCSSファイル
 ├── tailwind.config.js             // TailwindCSSの設定
 ├── tsconfig.json                  // TypeScriptの設定
