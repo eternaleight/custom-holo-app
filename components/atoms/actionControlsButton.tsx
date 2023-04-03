@@ -3,7 +3,7 @@ interface Props {
   toggle: () => void
   handleHidden: () => void
 }
-const AuthButton = ({ isOpen, toggle, handleHidden }: Props) => {
+const ActionControlsButton = ({ isOpen, toggle, handleHidden }: Props) => {
   return (
     <div className="flex">
       <button
@@ -24,4 +24,4 @@ const AuthButton = ({ isOpen, toggle, handleHidden }: Props) => {
     </div>
   )
 }
-export default AuthButton
+export default ActionControlsButton

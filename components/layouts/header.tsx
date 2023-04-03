@@ -1,4 +1,4 @@
-import AuthButton from "../atoms/authButton"
+import ActionControlsButton from "../atoms/actionControlsButton"
 import GroupIcon from "../atoms/groupIcon"
 
 interface Props {
@@ -14,7 +14,7 @@ const Header = ({ isOpen, toggle, handleHidden }: Props) => {
         <div className="hidden md:block">
           <GroupIcon />
         </div>
-        <AuthButton isOpen={isOpen} toggle={toggle} handleHidden={handleHidden} />
+        <ActionControlsButton isOpen={isOpen} toggle={toggle} handleHidden={handleHidden} />
         <div className="md:block hidden absolute pl-3 top-[8px] left-[0px] cursor-pointer">
           <div className="text-[32px] text-slate-900">holoApp</div>
         </div>
