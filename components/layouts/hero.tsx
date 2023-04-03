@@ -35,4 +35,5 @@ const Hero = ({ addText }: Text) => {
     </>
   )
 }
+
 export default Hero

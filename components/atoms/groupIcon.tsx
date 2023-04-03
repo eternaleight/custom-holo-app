@@ -57,4 +57,5 @@ const GroupIcon = () => {
     </div>
   )
 }
+
 export default GroupIcon

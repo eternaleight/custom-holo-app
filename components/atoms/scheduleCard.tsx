@@ -12,6 +12,7 @@ const ScheduleCard = () => {
   const holoVideo = "https://www.youtube.com/watch?v="
   const holoUrl = "https://holodex.net/api/v2/live/"
   const [holoData, setHoloData] = useState<Api[]>([])
+
   useEffect(() => {
     ;(async () => {
       const res = await fetch(holoUrl)
@@ -53,4 +54,5 @@ const ScheduleCard = () => {
     </div>
   )
 }
+
 export default ScheduleCard

@@ -3,18 +3,22 @@ import GroupIcon from "../atoms/groupIcon"
 
 interface Props {
   isOpen: boolean
-  toggle: () => void
-  handleHidden: () => void
+  toggleDrawer: () => void
+  fixAutoplayVideo: () => void
 }
 
-const Header = ({ isOpen, toggle, handleHidden }: Props) => {
+const Header = ({ isOpen, toggleDrawer: toggleDrawer, fixAutoplayVideo }: Props) => {
   return (
     <>
       <div className="bg-[#eaeaef] w-full h-[70px] flex items-center justify-end py-4 pr-3 gap-3">
         <div className="hidden md:block">
           <GroupIcon />
         </div>
-        <ActionControlsButton isOpen={isOpen} toggle={toggle} handleHidden={handleHidden} />
+        <ActionControlsButton
+          isOpen={isOpen}
+          toggleDrawer={toggleDrawer}
+          fixAutoplayVideo={fixAutoplayVideo}
+        />
         <div className="md:block hidden absolute pl-3 top-[8px] left-[0px] cursor-pointer">
           <div className="text-[32px] text-slate-900">holoApp</div>
         </div>
@@ -34,4 +38,5 @@ const Header = ({ isOpen, toggle, handleHidden }: Props) => {
     </>
   )
 }
+
 export default Header

@@ -10,18 +10,19 @@ import Drawer from "../components/layouts/drawer"
 export default function Home() {
   const [isOpen, setOpen] = useState<boolean>(false)
   const [previewHidden, setPreviewHidden] = useState<boolean>(false)
-  const handleHidden = () => setPreviewHidden(!previewHidden)
+  const fixAutoplayVideo = () => setPreviewHidden(!previewHidden)
 
   const [text, setText] = useState<string>("")
   const [addText, setAddText] = useState<string>("holo-app.vercel.app")
   const toggleDrawer = () => setOpen(!isOpen)
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const submitFormWithLocalStorage = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     localStorage.setItem("addText", text)
     setAddText(text)
     setText("")
   }
+
   useEffect(() => {
     const addText = localStorage.getItem("addText")
     setAddText(addText || "holo-app.vercel.app")
@@ -29,7 +30,7 @@ export default function Home() {
 
   return (
     <div className="relative flex flex-col items-center justify-end min-h-screen mx-auto overflow-x-hidden bg-gray-100">
-      <Header isOpen={isOpen} toggle={toggleDrawer} handleHidden={handleHidden} />
+      <Header isOpen={isOpen} toggleDrawer={toggleDrawer} fixAutoplayVideo={fixAutoplayVideo} />
       <div className="w-full md:hidden">
         <GroupIcon />
       </div>
@@ -40,7 +41,7 @@ export default function Home() {
       </div>
       <Hero addText={addText} />
       <h1 className="z-[1] top-[510px] md:text-[18px] text-[16px] whitespace-pre-line sm:mt-0 xs:mt-[-110px] xxs:mt-[-220px] mt-[-220px] mb-10">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={submitFormWithLocalStorage}>
           <label>
             <input
               autoComplete="off"
