@@ -1,5 +1,6 @@
 import dayjs from "dayjs"
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
+import { GlobalChangeCardContext } from "../../utils/change-card-size-observer"
 import { isCorrectScheduleHoloUrl } from "../../utils/util"
 import { Api } from "./liveCard"
 
@@ -12,6 +13,7 @@ const ScheduleCard = () => {
   const holoVideo = "https://www.youtube.com/watch?v="
   const holoUrl = "https://holodex.net/api/v2/live/"
   const [holoData, setHoloData] = useState<Api[]>([])
+  const { isChangeCardSize, toggleChangeCardSize } = useContext(GlobalChangeCardContext)
 
   useEffect(() => {
     ;(async () => {
@@ -26,8 +28,15 @@ const ScheduleCard = () => {
       {holoData.map((holoDatas: Api) => {
         return isCorrectScheduleHoloUrl(holoDatas) ? (
           <>
-            <div className="relative w-[250px] max-xl:w-[24%] max-mm:w-[32.5%] max-md:w-[48.5%] max-sm:w-[48%.5] max-xs:w-[48.5%] h-full flex flex-col border shadow-sm rounded-xl bg-[#223e] border-gray-700 shadow-slate-700/[.7]">
-              <div className="absolute text-xs font-bold text-center text-gray-200 bottom-1 right-2 opacity-90 max-sm:text-[10px]">
+            <div
+              className={`relative ${
+                isChangeCardSize ? "w-[23vw]" : "w-[250px]"
+              } max-xl:w-[24%] max-mm:w-[32.5%] max-md:w-[48.5%] max-sm:w-[48%.5] max-xs:w-[48.5%] h-full flex flex-col border shadow-sm rounded-xl bg-[#223e] border-gray-700 shadow-slate-700/[.7] group`}
+            >
+              <div
+                onClick={toggleChangeCardSize}
+                className="absolute text-xs font-bold text-center text-gray-200 bottom-1 right-2 opacity-90 max-sm:text-[10px] transition ease-in-out delay-150 xl:hover:-translate-y-1 xl:hover:scale-110 bg-transparent hover:bg-transparent duration-300 xl:cursor-pointer"
+              >
                 <span className="mr-[1px]">◎</span>配信予定
               </div>
               <a href={`${holoVideo}${holoDatas.id}`} target="_blank">
