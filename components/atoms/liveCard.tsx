@@ -80,7 +80,6 @@ const LiveCard = ({ isAutoPlayFixed: isAutoPlayFixed }: Props) => {
   return (
     <>
       {loading ? (
-        <>
           <div
             className="fixed z-[2] top-[40%] animate-spin inline-block w-10 h-10 border-[3px] border-current border-t-transparent text-[#F3F4F6] rounded-full"
             role="status"
@@ -88,12 +87,11 @@ const LiveCard = ({ isAutoPlayFixed: isAutoPlayFixed }: Props) => {
           >
             <span className="sr-only">Loading...</span>
           </div>
-        </>
       ) : null}
       {holoData.map((holoDatas: Api, index) => {
         return isCorrectLiveHoloUrl(holoDatas) ? (
-          <>
             <div
+              key={holoDatas.id}
               className={`relative ${isChangeLiveCardSize?'w-[32.5%]':'w-[23%]'} max-xl:w-[24%] max-lg:w-[32%] max-mm:w-[48.5%] max-md:w-[48.5%] max-sm:w-[48.5%] max-xs:w-[48.5%] h-full flex flex-col border shadow-sm rounded-xl bg-gray-800 border-gray-700 shadow-slate-700/[.7]`}
               onMouseEnter={!fixedVideo ? () => setIsHovering(index) : undefined}
               onMouseLeave={!fixedVideo ? () => setIsHovering(-1) : undefined}
@@ -134,7 +132,6 @@ const LiveCard = ({ isAutoPlayFixed: isAutoPlayFixed }: Props) => {
                 </div>
               </a>
             </div>
-          </>
         ) : null
       })}
     </>

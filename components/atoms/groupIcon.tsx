@@ -39,8 +39,8 @@ const GroupIcon = () => {
     <div className="max-md:absolute flex justify-end mr-3 max-md:items-end max-md:flex-col right-[2px] top-[60px] z-[2]">
       {holoData.map((holoDatas: Api) => {
         return isCorrectLiveHoloUrl(holoDatas) ? (
-          <>
             <a
+              key={holoDatas.id}
               className="flex items-center gap-x-3.5 max-md:mt-[-32px] py-2 mx-[-7px] rounded-md text-sm text-gray-800 dark:text-gray-400"
               target="_blank"
               href={`${holoVideo}${holoDatas.id}`}
@@ -51,7 +51,6 @@ const GroupIcon = () => {
                 alt="Image Description"
               />
             </a>
-          </>
         ) : null
       })}
     </div>
