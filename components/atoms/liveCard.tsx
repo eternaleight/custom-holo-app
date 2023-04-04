@@ -1,6 +1,7 @@
 import dayjs from "dayjs"
-import { useEffect, useRef, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import { isCorrectLiveHoloUrl } from "../../utils/util"
+import { GlobalChangeCardContext } from "../../utils/change-card-size-observer"
 import HoverVideo from "./hoverVideo"
 
 export type Api = {
@@ -42,6 +43,7 @@ const LiveCard = ({ isAutoPlayFixed: isAutoPlayFixed }: Props) => {
   const [loading, setLoading] = useState<boolean>(true)
   const [isHidden, setIsHidden] = useState(false)
   const [fixedVideo, setFixedVideo] = useState(false)
+  const { isChangeLiveCardSize } = useContext(GlobalChangeCardContext)
   const ref = useRef<HTMLDivElement>(null)
 
   const handleFixed = () => {
@@ -64,6 +66,7 @@ const LiveCard = ({ isAutoPlayFixed: isAutoPlayFixed }: Props) => {
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [ref])
+  console.log(isChangeLiveCardSize,'isChangeLiveCardSize')
 
   useEffect(() => {
     setLoading(true)
@@ -92,7 +95,7 @@ const LiveCard = ({ isAutoPlayFixed: isAutoPlayFixed }: Props) => {
         return isCorrectLiveHoloUrl(holoDatas) ? (
           <>
             <div
-              className="relative w-[23%] max-xl:w-[24%] max-lg:w-[32%] max-mm:w-[48.5%] max-md:w-[48.5%] max-sm:w-[48.5%] max-xs:w-[48.5%] h-full flex flex-col border shadow-sm rounded-xl bg-gray-800 border-gray-700 shadow-slate-700/[.7]"
+              className={`relative ${isChangeLiveCardSize?'w-[32.5%]':'w-[23%]'} max-xl:w-[24%] max-lg:w-[32%] max-mm:w-[48.5%] max-md:w-[48.5%] max-sm:w-[48.5%] max-xs:w-[48.5%] h-full flex flex-col border shadow-sm rounded-xl bg-gray-800 border-gray-700 shadow-slate-700/[.7]`}
               onMouseEnter={!fixedVideo ? () => setIsHovering(index) : undefined}
               onMouseLeave={!fixedVideo ? () => setIsHovering(-1) : undefined}
             >
