@@ -25,7 +25,11 @@ export type Api = {
   type: string
 }
 
-const LiveCard = ({ previewHidden }: { previewHidden: boolean }) => {
+interface Props {
+  isAutoPlayFixed: boolean
+}
+
+const LiveCard = ({ isAutoPlayFixed: isAutoPlayFixed }: Props) => {
   const youtube_jpeg = "https://img.youtube.com/vi/"
   const youtube_jpeg_size = {
     large: "/maxresdefault.jpg",
@@ -92,7 +96,7 @@ const LiveCard = ({ previewHidden }: { previewHidden: boolean }) => {
               onMouseEnter={!fixedVideo ? () => setIsHovering(index) : undefined}
               onMouseLeave={!fixedVideo ? () => setIsHovering(-1) : undefined}
             >
-              {previewHidden ? (
+              {isAutoPlayFixed ? (
                 <button
                   className={`${
                     fixedVideo ? "opacity-80 hover:opacity-100" : "opacity-30 hover:opacity-100"

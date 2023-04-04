@@ -2,12 +2,13 @@ import ActionControlsButton from "../atoms/actionControlsButton"
 import GroupIcon from "../atoms/groupIcon"
 
 interface Props {
-  isOpen: boolean
+  isOpenDrawer: boolean
+  isFixedVideo: boolean
   toggleDrawer: () => void
-  fixAutoplayVideo: () => void
+  toggleFixedVideo: () => void
 }
 
-const Header = ({ isOpen, toggleDrawer: toggleDrawer, fixAutoplayVideo }: Props) => {
+const Header = ({ isOpenDrawer, isFixedVideo, toggleDrawer, toggleFixedVideo }: Props) => {
   return (
     <>
       <div className="bg-[#eaeaef] w-full h-[70px] flex items-center justify-end py-4 pr-3 gap-3">
@@ -15,9 +16,10 @@ const Header = ({ isOpen, toggleDrawer: toggleDrawer, fixAutoplayVideo }: Props)
           <GroupIcon />
         </div>
         <ActionControlsButton
-          isOpen={isOpen}
+          isOpenDrawer={isOpenDrawer}
+          isFixedVideo={isFixedVideo}
           toggleDrawer={toggleDrawer}
-          fixAutoplayVideo={fixAutoplayVideo}
+          toggleFixedVideo={toggleFixedVideo}
         />
         <div className="md:block hidden absolute pl-3 top-[8px] left-[0px] cursor-pointer">
           <div className="text-[32px] text-slate-900">holoApp</div>

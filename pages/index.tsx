@@ -8,38 +8,42 @@ import GroupIcon from "../components/atoms/groupIcon"
 import Drawer from "../components/layouts/drawer"
 
 export default function Home() {
-  const [isOpen, setOpen] = useState<boolean>(false)
-  const [previewHidden, setPreviewHidden] = useState<boolean>(false)
-  const fixAutoplayVideo = () => setPreviewHidden(!previewHidden)
-
-  const [text, setText] = useState<string>("")
-  const [addText, setAddText] = useState<string>("holo-app.vercel.app")
-  const toggleDrawer = () => setOpen(!isOpen)
+  const [isOpenDrawer, setIsOpenDrawer] = useState<boolean>(false)
+  const [isFixedVideo, setIsFixedVideo] = useState<boolean>(false)
+  const [inputText, setInputText] = useState<string>("")
+  const [displayText, setdisplayText] = useState<string>("holo-app.vercel.app")
+  const toggleFixedVideo = () => setIsFixedVideo(!isFixedVideo)
+  const toggleDrawer = () => setIsOpenDrawer(!isOpenDrawer)
 
   const submitFormWithLocalStorage = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    localStorage.setItem("addText", text)
-    setAddText(text)
-    setText("")
+    localStorage.setItem("displayText", inputText)
+    setdisplayText(inputText)
+    setInputText("")
   }
 
   useEffect(() => {
-    const addText = localStorage.getItem("addText")
-    setAddText(addText || "holo-app.vercel.app")
+    const localDisplayText = localStorage.getItem("displayText")
+    setdisplayText(localDisplayText || "holo-app.vercel.app")
   }, [])
 
   return (
     <div className="relative flex flex-col items-center justify-end min-h-screen mx-auto overflow-x-hidden bg-gray-100">
-      <Header isOpen={isOpen} toggleDrawer={toggleDrawer} fixAutoplayVideo={fixAutoplayVideo} />
+      <Header
+        isOpenDrawer={isOpenDrawer}
+        isFixedVideo={isFixedVideo}
+        toggleDrawer={toggleDrawer}
+        toggleFixedVideo={toggleFixedVideo}
+      />
       <div className="w-full md:hidden">
         <GroupIcon />
       </div>
       <div className="flex flex-wrap justify-center mx-2 mt-8 md:my-8 gap-2">
-        <Drawer toggleDrawer={toggleDrawer} isOpen={isOpen} />
-        <LiveCard previewHidden={previewHidden} />
+        <Drawer toggleDrawer={toggleDrawer} isOpen={isOpenDrawer} />
+        <LiveCard isAutoPlayFixed={isFixedVideo} />
         <ScheduleCard />
       </div>
-      <Hero addText={addText} />
+      <Hero displayText={displayText} />
       <h1 className="z-[1] top-[510px] md:text-[18px] text-[16px] whitespace-pre-line sm:mt-0 xs:mt-[-110px] xxs:mt-[-220px] mt-[-220px] mb-10">
         <form onSubmit={submitFormWithLocalStorage}>
           <label>
@@ -48,8 +52,8 @@ export default function Home() {
               type="text"
               name="name"
               className="mx-2 border-[1px] border-gray-800 rounded-md"
-              value={text}
-              onChange={(e) => setText(e.target.value)}
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
             />
           </label>
           <input

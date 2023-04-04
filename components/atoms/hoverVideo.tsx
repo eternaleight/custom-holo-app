@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from "react"
 
-const HoverVideo = ({ videoId, isHovering }: { videoId: string; isHovering: boolean }) => {
+interface Props {
+  videoId: string
+  isHovering: boolean
+}
+
+const HoverVideo = ({ videoId, isHovering }: Props) => {
   const [mute, setMute] = useState<boolean>(true)
   const iframeRef = useRef<HTMLIFrameElement>(null)
   const handleMute = () => {
@@ -12,6 +17,7 @@ const HoverVideo = ({ videoId, isHovering }: { videoId: string; isHovering: bool
         iframeRef.current.src = iframeRef.current.src.replace("?mute=1", "")
       }
     }
+    console.log(iframeRef.current)
   }
 
   useEffect(() => {
@@ -33,9 +39,7 @@ const HoverVideo = ({ videoId, isHovering }: { videoId: string; isHovering: bool
       </div>
 
       <div
-        className={`w-full ${
-          isHovering ? "fixed w-[50%] h-[34vw] mx-auto bottom-8 right-8 z-[2]" : null
-        }`}
+        className={`w-full ${isHovering ? "fixed w-[50%] h-[34vw] bottom-8 right-8 z-[2]" : null}`}
       >
         <iframe
           ref={iframeRef}
