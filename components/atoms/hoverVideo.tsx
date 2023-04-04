@@ -17,7 +17,6 @@ const HoverVideo = ({ videoId, isHovering }: Props) => {
         iframeRef.current.src = iframeRef.current.src.replace("?mute=1", "")
       }
     }
-    console.log(iframeRef.current)
   }
 
   useEffect(() => {

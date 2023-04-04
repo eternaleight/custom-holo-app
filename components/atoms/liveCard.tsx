@@ -66,7 +66,6 @@ const LiveCard = ({ isAutoPlayFixed: isAutoPlayFixed }: Props) => {
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [ref])
-  console.log(isChangeLiveCardSize,'isChangeLiveCardSize')
 
   useEffect(() => {
     setLoading(true)

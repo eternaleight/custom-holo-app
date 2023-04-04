@@ -1,20 +1,26 @@
 import { useState, createContext, ReactNode } from "react"
 
 interface AppContextProps {
+  // LiveCard
   isChangeLiveCardSize: boolean
-  isChangeCardSize: boolean
   setIsChangeLiveCardSize: (isChangeCardSize: boolean) => void
-  setIsChangeCardSize: (isChangeCardSize: boolean) => void
   toggleChangeLiveCardSize: () => void
+
+  // ScheduleCard
+  isChangeCardSize: boolean
+  setIsChangeCardSize: (isChangeCardSize: boolean) => void
   toggleChangeCardSize: () => void
 }
 
 export const GlobalChangeCardContext = createContext<AppContextProps>({
+  // LiveCard
   isChangeLiveCardSize: false,
-  isChangeCardSize: false,
   setIsChangeLiveCardSize: () => {},
-  setIsChangeCardSize: () => {},
   toggleChangeLiveCardSize: () => {},
+
+  // ScheduleCard
+  isChangeCardSize: false,
+  setIsChangeCardSize: () => {},
   toggleChangeCardSize: () => {},
 })
 
