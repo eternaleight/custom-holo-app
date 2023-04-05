@@ -39,7 +39,7 @@ export default function Home() {
         <GroupIcon />
       </div>
       <div className="flex flex-wrap justify-center mx-2 mt-8 md:my-8 gap-2">
-        <Drawer toggleDrawer={toggleDrawer} isOpen={isOpenDrawer} />
+        <Drawer toggleDrawer={toggleDrawer} isOpenDrawer={isOpenDrawer} />
         <LiveCard isAutoPlayFixed={isFixedVideo} />
         <ScheduleCard />
       </div>
