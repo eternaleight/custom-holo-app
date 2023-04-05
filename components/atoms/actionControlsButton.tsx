@@ -25,13 +25,14 @@ const ActionControlsButton = ({
   if (isLoading) {
     return (
       <div className="w-[38%] flex flex-col justify-center items-center">
-        <div
+        {/* loading spinner
+            <div
           className="duration-1000 loading-spinner inline-block w-10 h-10 border-[3px] border-current border-t-transparent text-[#F3F4F6] rounded-full"
           role="status"
           aria-label="loading"
         >
           <span className="sr-only">Loading...</span>
-        </div>
+        </div> */}
       </div>
     )
   }
