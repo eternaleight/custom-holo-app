@@ -14,11 +14,30 @@ const ActionControlsButton = ({
   toggleDrawer,
   toggleFixedVideo,
 }: Props) => {
-  const { isChangeLiveCardSize, isChangeCardSize, toggleChangeLiveCardSize, toggleChangeCardSize } =
-    useContext(GlobalChangeCardContext)
+  const {
+    isChangeLiveCardSize,
+    isChangeCardSize,
+    toggleChangeLiveCardSize,
+    toggleChangeCardSize,
+    isLoading,
+  } = useContext(GlobalChangeCardContext)
+
+  if (isLoading) {
+    return (
+      <div className="w-[38%] flex flex-col justify-center items-center">
+        <div
+          className="duration-1000 loading-spinner inline-block w-10 h-10 border-[3px] border-current border-t-transparent text-[#F3F4F6] rounded-full"
+          role="status"
+          aria-label="loading"
+        >
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
+    )
+  }
 
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-3 button-container">
       <button
         onClick={toggleDrawer}
         className="w-[130px] h-[40px] bg-white hover:bg-[#98a0fb] border-[1px] border-[#98a0fb] text-[#98a0fb] hover:text-[#98a0fbee] hover:bg-[#98a0fb2e]"
