@@ -93,7 +93,7 @@ const LiveCard = ({ isAutoPlayFixed: isAutoPlayFixed }: Props) => {
           <div
             key={holoDatas.id}
             className={`relative ${
-              isChangeLiveCardSize ? "w-[23%]" : "w-[250px]"
+              isChangeLiveCardSize ? "w-[23.5vw]" : "w-[19vw]"
             } max-xl:w-[24%] max-lg:w-[32%] max-mm:w-[48.5%] max-md:w-[48.5%] max-sm:w-[48.5%] max-xs:w-[48.5%] h-full flex flex-col border shadow-sm rounded-xl bg-gray-800 border-gray-700 shadow-slate-700/[.7]`}
             onMouseEnter={!fixedVideo ? () => setIsHovering(index) : undefined}
             onMouseLeave={!fixedVideo ? () => setIsHovering(-1) : undefined}

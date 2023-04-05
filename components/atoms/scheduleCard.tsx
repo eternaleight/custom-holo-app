@@ -30,7 +30,7 @@ const ScheduleCard = () => {
           <div
             key={holoDatas.id}
             className={`relative ${
-              isChangeCardSize ? "w-[23vw]" : "w-[250px]"
+              isChangeCardSize ? "w-[23.5vw]" : "w-[250px]"
             } max-xl:w-[24%] max-mm:w-[32.5%] max-md:w-[48.5%] max-sm:w-[48%.5] max-xs:w-[48.5%] h-full flex flex-col border shadow-sm rounded-xl bg-[#223e] border-gray-700 shadow-slate-700/[.7] group`}
           >
             <div

@@ -51,7 +51,7 @@ export default function Home() {
               autoComplete="off"
               type="text"
               name="name"
-              className="mx-2 border-[1px] border-gray-800 rounded-md"
+              className="mx-2 border border-gray-800 rounded-md"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
             />
@@ -59,7 +59,7 @@ export default function Home() {
           <input
             type="submit"
             value="Submit"
-            className="mx-2 bg-gray-100 border-[1px] border-gray-800 rounded-md px-[8px] cursor-pointer hover:bg-gray-300"
+            className="px-2 mx-2 bg-gray-100 border border-gray-800 cursor-pointer rounded-md hover:bg-gray-300"
           />
         </form>
       </h1>
