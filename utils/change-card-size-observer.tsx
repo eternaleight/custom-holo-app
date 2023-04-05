@@ -38,7 +38,7 @@ export const GlobalChangeCardObserver: React.FC<Props> = ({ children }) => {
   const [isChangeLiveCardSize, setIsChangeLiveCardSize] = useState(() => {
     if (typeof window !== "undefined") {
       const storedValue = localStorage.getItem("isLocalChangeLiveCardSize")
-      return storedValue !== null ? JSON.parse(storedValue) : false
+      return storedValue !== null ? JSON.parse(storedValue) : true
     }
   })
 
