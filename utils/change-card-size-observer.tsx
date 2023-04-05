@@ -1,4 +1,4 @@
-import { useState, createContext, ReactNode } from "react"
+import { useState, createContext, ReactNode, useEffect } from "react"
 
 interface AppContextProps {
   // LiveCard
@@ -10,44 +10,76 @@ interface AppContextProps {
   isChangeCardSize: boolean
   setIsChangeCardSize: (isChangeCardSize: boolean) => void
   toggleChangeCardSize: () => void
+
+  // ActionControlsButtonのローディングスピナー用
+  isLoading: boolean
 }
 
 export const GlobalChangeCardContext = createContext<AppContextProps>({
-  // LiveCard
   isChangeLiveCardSize: false,
   setIsChangeLiveCardSize: () => {},
   toggleChangeLiveCardSize: () => {},
 
-  // ScheduleCard
   isChangeCardSize: false,
   setIsChangeCardSize: () => {},
   toggleChangeCardSize: () => {},
+
+  isLoading: true,
 })
 
-type Props = {
+interface Props {
   children: ReactNode
 }
 
-export const GlobalChangeCardObserver: React.FC<Props> = ({ children }) => {
-  const [isChangeLiveCardSize, setIsChangeLiveCardSize] = useState(
-    false
-    // () => {
-    // if (typeof window !== "undefined") {
-    //   const storedValue = localStorage.getItem("isLocalChangeLiveCardSize")
-    //   return storedValue !== null ? JSON.parse(storedValue) : false
-    // }
-  // }
-  )
+// ActionControlsButtonのローディングで使う(S -> L切り替えの初期描画のラグを防止)
 
-  const [isChangeCardSize, setIsChangeCardSize] = useState(
-    false
-    // () => {
-    // if (typeof window !== "undefined") {
-    //   const storedValue = localStorage.getItem("isLocalChangeCardSize")
-    //   return storedValue !== null ? JSON.parse(storedValue) : false
-    // }
-  // }
-  )
+export const GlobalChangeCardObserver: React.FC<Props> = ({ children }) => {
+  const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [isChangeLiveCardSize, setIsChangeLiveCardSize] = useState(() => {
+    if (typeof window !== "undefined") {
+      const storedValue = localStorage.getItem("isLocalChangeLiveCardSize")
+      return storedValue !== null ? JSON.parse(storedValue) : false
+    }
+  })
+
+  const [isChangeCardSize, setIsChangeCardSize] = useState(() => {
+    if (typeof window !== "undefined") {
+      const storedValue = localStorage.getItem("isLocalChangeCardSize")
+      return storedValue !== null ? JSON.parse(storedValue) : false
+    }
+  })
+
+  async function getLocalStorageItem(key: string, defaultValue: boolean) {
+    if (typeof window !== "undefined") {
+      const storedValue = localStorage.getItem(key)
+      if (storedValue !== null) {
+        return JSON.parse(storedValue)
+      }
+    }
+    return defaultValue
+  }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const localChangeLiveCardSize = await getLocalStorageItem(
+          "isLocalChangeLiveCardSize",
+          isChangeLiveCardSize
+        )
+        const localChangeCardSize = await getLocalStorageItem(
+          "isLocalChangeCardSize",
+          isChangeCardSize
+        )
+        setIsChangeLiveCardSize(localChangeLiveCardSize)
+        setIsChangeCardSize(localChangeCardSize)
+      } catch (e) {
+        console.log(e)
+      } finally {
+        setTimeout(() => setIsLoading(false), 300)
+      }
+    }
+    fetchData()
+  }, [])
 
   const toggleChangeLiveCardSize = () => {
     setIsChangeLiveCardSize(!isChangeLiveCardSize)
@@ -61,7 +93,15 @@ export const GlobalChangeCardObserver: React.FC<Props> = ({ children }) => {
 
   return (
     <GlobalChangeCardContext.Provider
-      value={{ isChangeLiveCardSize,isChangeCardSize,setIsChangeLiveCardSize, setIsChangeCardSize,toggleChangeLiveCardSize, toggleChangeCardSize }}
+      value={{
+        isChangeLiveCardSize,
+        isChangeCardSize,
+        setIsChangeLiveCardSize,
+        setIsChangeCardSize,
+        toggleChangeLiveCardSize,
+        toggleChangeCardSize,
+        isLoading,
+      }}
     >
       {children}
     </GlobalChangeCardContext.Provider>
