@@ -5,7 +5,7 @@ import { useEffect } from "react"
 import * as gtag from "../lib/gtag"
 import { GaScript } from "../components/atoms/gaScript"
 import ChangeCardSizeObserver from "../utils/change-card-size-observer"
-import HeadMeta from "../components/atoms/metaHead"
+import HeadMeta from "../components/atoms/headMeta"
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
