@@ -52,9 +52,9 @@ button {
   display: inline-block;
   width: 30px;
   height: 30px;
-  border: 3px solid #ccc;
-  border-top-color: #333;
-  border-radius: 50%;
+  /* border: 3px solid #ccc; */
+  /* border-top-color: #333; */
+  /* border-radius: 50%; */
   animation: spin 1s ease-in-out infinite;
 }
 
@@ -66,13 +66,14 @@ button {
 
 .button-container {
   opacity: 0;
-  animation: appear 1s ease-in-out forwards;
+  animation: appear 0.8s ease-in-out forwards;
 }
 
 @keyframes appear {
-from {
-opacity: 0;
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-to {
-opacity: 1;
-}}
