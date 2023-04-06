@@ -27,10 +27,10 @@ export type Api = {
 }
 
 interface Props {
-  isAutoPlayFixed: boolean
+  isFixedVideo: boolean
 }
 
-const LiveCard = ({ isAutoPlayFixed: isAutoPlayFixed }: Props) => {
+const LiveCard = ({ isFixedVideo }: Props) => {
   const youtube_jpeg = "https://img.youtube.com/vi/"
   const youtube_jpeg_size = {
     large: "/maxresdefault.jpg",
@@ -98,11 +98,11 @@ const LiveCard = ({ isAutoPlayFixed: isAutoPlayFixed }: Props) => {
             onMouseEnter={!fixedVideo ? () => setIsHovering(index) : undefined}
             onMouseLeave={!fixedVideo ? () => setIsHovering(-1) : undefined}
           >
-            {isAutoPlayFixed ? (
+            {isFixedVideo ? (
               <button
                 className={`${
-                  fixedVideo ? "opacity-80 hover:opacity-100" : "opacity-30 hover:opacity-100"
-                }`}
+                  fixedVideo ? "opacity-80" : "opacity-30"
+                } hover:opacity-100 rounded-t-[11px] rounded-b-[0px] mb-[0.5px]`}
                 onClick={handleFixed}
               >
                 🧷 Preview固定 {fixedVideo ? "on" : "off"}
@@ -120,7 +120,7 @@ const LiveCard = ({ isAutoPlayFixed: isAutoPlayFixed }: Props) => {
             </div>
             <a href={`${holoVideo}${holoDatas.id}`} target="_blank">
               <img
-                className="w-full h-auto rounded-t-xl"
+                className={`w-full h-auto ${isFixedVideo ? "" : "rounded-t-xl"}`}
                 src={youtube_jpeg + holoDatas.id + youtube_jpeg_size.large}
                 alt="Image Description"
               />

@@ -40,7 +40,7 @@ export default function Home() {
       </div>
       <div className="flex flex-wrap justify-center mx-2 mt-8 md:my-8 gap-2">
         <Drawer toggleDrawer={toggleDrawer} isOpenDrawer={isOpenDrawer} />
-        <LiveCard isAutoPlayFixed={isFixedVideo} />
+        <LiveCard isFixedVideo={isFixedVideo} />
         <ScheduleCard />
       </div>
       <Hero displayText={displayText} />
