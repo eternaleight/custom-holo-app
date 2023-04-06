@@ -102,7 +102,7 @@ const LiveCard = ({ isFixedVideo }: Props) => {
               <button
                 className={`${
                   fixedVideo ? "opacity-80" : "opacity-30"
-                } hover:opacity-100 rounded-t-[11px] rounded-b-[0px] mb-[0.5px]`}
+                } hover:opacity-100 rounded-t-[11px] mb-[0.5px]`}
                 onClick={handleFixed}
               >
                 🧷 Preview固定 {fixedVideo ? "on" : "off"}
@@ -120,7 +120,7 @@ const LiveCard = ({ isFixedVideo }: Props) => {
             </div>
             <a href={`${holoVideo}${holoDatas.id}`} target="_blank">
               <img
-                className={`w-full h-auto ${isFixedVideo ? "" : "rounded-t-xl"}`}
+                className="w-full h-auto rounded-t-xl"
                 src={youtube_jpeg + holoDatas.id + youtube_jpeg_size.large}
                 alt="Image Description"
               />
