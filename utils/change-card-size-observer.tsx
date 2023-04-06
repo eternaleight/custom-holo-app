@@ -75,7 +75,7 @@ export const GlobalChangeCardObserver: React.FC<Props> = ({ children }) => {
       } catch (e) {
         console.log(e)
       } finally {
-        setTimeout(() => setIsLoading(false), 500)
+        setTimeout(() => setIsLoading(false), 300)
       }
     }
     fetchData()
