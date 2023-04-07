@@ -28,7 +28,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="relative flex flex-col items-center justify-end min-h-screen mx-auto overflow-x-hidden bg-gray-100">
+    <div className="flex flex-col items-center justify-between min-h-screen overflow-x-hidden bg-gray-100">
       <Header
         isOpenDrawer={isOpenDrawer}
         isFixedVideo={isFixedVideo}
