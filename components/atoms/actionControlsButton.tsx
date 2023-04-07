@@ -50,7 +50,7 @@ const ActionControlsButton = ({
 
       <button
         onClick={toggleChangeLiveCardSize}
-        className="max-xl:hidden w-[130px] h-[40px] bg-white hover:bg-[#98a0fb] border-[1px] border-[#98a0fb] text-[#98a0fb] hover:text-[#98a0fbee] hover:bg-[#98a0fb2e]"
+        className="max-xl:hidden w-[130px] h-[40px] bg-white border-[1px] border-[#98a0fb] text-[#98a0fb] hover:text-[#98a0fbee] hover:bg-[#98a0fb2e]"
       >
         Live Card{" "}
         <span className="border shadow-[0.5px_0.5px_1px_0px_#98a0fb99] p-[4px] rounded-[4px]">
@@ -60,7 +60,7 @@ const ActionControlsButton = ({
 
       <button
         onClick={toggleChangeCardSize}
-        className="max-xl:hidden w-[130px] h-[40px] bg-white hover:bg-[#98a0fb] border-[1px] border-[#98a0fb] text-[#98a0fb] hover:text-[#98a0fbee] hover:bg-[#98a0fb2e]"
+        className="max-xl:hidden w-[130px] h-[40px] bg-white border-[1px] border-[#98a0fb] text-[#98a0fb] hover:text-[#98a0fbee] hover:bg-[#98a0fb2e]"
       >
         Schedule{" "}
         <span className="border shadow-[0.5px_0.5px_1px_0px_#98a0fb99] p-[4px] rounded-[4px]">
