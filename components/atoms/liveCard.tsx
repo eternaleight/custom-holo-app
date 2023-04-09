@@ -75,7 +75,7 @@ const LiveCard = ({ isFixedVideo }: Props) => {
       setHoloData(users)
     })()
     setLoading(false)
-  }, [holoUrl])
+  }, [])
 
   return (
     <>

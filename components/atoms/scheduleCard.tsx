@@ -21,7 +21,7 @@ const ScheduleCard = () => {
       const users = await res.json()
       setHoloData(users)
     })()
-  }, [holoUrl])
+  }, [])
 
   return (
     <div className="flex flex-wrap justify-center h-full gap-2">

@@ -33,7 +33,7 @@ const GroupIcon = () => {
       const users = await res.json()
       setHoloData(users)
     })()
-  }, [holoUrl])
+  }, [])
 
   return (
     <div className="max-md:absolute flex justify-end mr-3 max-md:items-end max-md:flex-col right-[2px] top-[60px] z-[2]">
