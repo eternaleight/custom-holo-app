@@ -1,7 +1,7 @@
 import dayjs from "dayjs"
 import { useContext, useEffect, useRef, useState } from "react"
 import { isCorrectLiveHoloUrl } from "../../utils/util"
-import { GlobalChangeCardContext } from "../../utils/change-card-size-observer"
+import { GlobalChangeCardContext } from "../../utils/globalChangeCardObserver"
 import HoverVideo from "./hoverVideo"
 
 export type Api = {

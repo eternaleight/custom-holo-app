@@ -1,6 +1,6 @@
 import dayjs from "dayjs"
 import React, { useContext, useEffect, useState } from "react"
-import { GlobalChangeCardContext } from "../../utils/change-card-size-observer"
+import { GlobalChangeCardContext } from "../../utils/globalChangeCardObserver"
 import { isCorrectScheduleHoloUrl } from "../../utils/util"
 import { Api } from "./liveCard"
 

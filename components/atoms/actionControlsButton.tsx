@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { GlobalChangeCardContext } from "../../utils/change-card-size-observer"
+import { GlobalChangeCardContext } from "../../utils/globalChangeCardObserver"
 
 interface Props {
   isOpenDrawer: boolean
