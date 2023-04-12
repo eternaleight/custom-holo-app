@@ -27,7 +27,6 @@ const CoinButton: React.FC = () => {
     <div className="p-2 text-white">
       <div className="text-[14px]">１日１回</div>
       <button
-        className={`coin-button ${clicked ? "disabled" : ""}`}
         disabled={clicked}
         onClick={handleClick}
       >
