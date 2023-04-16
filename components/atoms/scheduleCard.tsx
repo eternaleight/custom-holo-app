@@ -17,7 +17,11 @@ const ScheduleCard = () => {
 
   useEffect(() => {
     ;(async () => {
-      const res = await fetch(holoUrl)
+      const res = await fetch(holoUrl, {
+        headers: {
+          "X-APIKEY": process.env.NEXT_PUBLIC_API_KEY || "",
+        },
+      })
       const users = await res.json()
       setHoloData(users)
     })()
