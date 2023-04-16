@@ -26,10 +26,7 @@ const CoinButton: React.FC = () => {
   return (
     <div className="p-2 text-white">
       <div className="text-[14px]">１日１回</div>
-      <button
-        disabled={clicked}
-        onClick={handleClick}
-      >
+      <button disabled={clicked} onClick={handleClick}>
         コインを受け取る
       </button>
       <div className="text-[14px]">: {coins}💰 </div>

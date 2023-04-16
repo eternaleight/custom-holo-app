@@ -73,7 +73,7 @@ const LiveCard = ({ isFixedVideo }: Props) => {
       const res = await fetch(holoUrl, {
         headers: {
           "X-APIKEY": process.env.NEXT_PUBLIC_API_KEY || "",
-        }
+        },
       })
       const users = await res.json()
       setHoloData(users)
