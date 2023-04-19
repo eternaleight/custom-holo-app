@@ -1,6 +1,12 @@
 ## holoApp
-
 https://holo-app.vercel.app
+
+
+#### Zennで作成方法を書いてます (VTuberアプリケーション開発の基本　基礎から始めるアプリケーション開発のステップ)
+https://zenn.dev/eternaleight/books/fedd5f1ce2f9fc
+
+
+
 <a href="https://holo-app.vercel.app" target="_blank" rel=”noopener”><img src="https://user-images.githubusercontent.com/96198088/214283904-4ec943e7-58c3-4b35-8cfa-afbe9a250546.png" alt="holo-app" /></a>
 
 - [Next.js](https://nextjs.org/) - The React Framework for Production Next.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. No config needed.
