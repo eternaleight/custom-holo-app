@@ -3,8 +3,6 @@
 #### Web Site
 https://holo-app.vercel.app
 
-#### Zennで作成方法を書いてます。 (VTuberアプリケーション開発の基本　基礎から始めるアプリケーション開発のステップ)
-https://zenn.dev/eternaleight/books/fedd5f1ce2f9fc
 
 
 
