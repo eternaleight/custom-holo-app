@@ -1,6 +1,7 @@
 ## holoApp
-https://holo-app.vercel.app
 
+#### Web Site
+https://holo-app.vercel.app
 
 #### Zennで作成方法を書いてます (VTuberアプリケーション開発の基本　基礎から始めるアプリケーション開発のステップ)
 https://zenn.dev/eternaleight/books/fedd5f1ce2f9fc
@@ -13,9 +14,6 @@ https://zenn.dev/eternaleight/books/fedd5f1ce2f9fc
 
 <a href="https://holo-app.vercel.app" target="_blank" rel=”noopener”><img src="https://user-images.githubusercontent.com/96198088/214283941-fae3ee90-a7f7-44f6-bfe7-c6c3e07c0f91.png" alt="holo-app" width="50%" /></a>
 <a href="https://holo-app.vercel.app" target="_blank" rel=”noopener”><img src="https://user-images.githubusercontent.com/96198088/214284033-a14d6fb6-9422-45d5-9c77-b4b083cb809f.png" alt="holo-app" width="45%" /></a>
-
-
-
 
 
 
