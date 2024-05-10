@@ -4,7 +4,7 @@ import { isCorrectLiveHoloUrl } from "../../utils/util"
 import { GlobalChangeCardContext } from "../../utils/globalChangeCardObserver"
 import HoverVideo from "./hoverVideo"
 
-export type Api = {
+export type HoloData = {
   available_at: string
   channel: {
     english_name: string
@@ -39,7 +39,7 @@ const LiveCard = ({ isFixedVideo }: Props) => {
   const holoVideo = "https://www.youtube.com/watch?v="
   const holoUrl = "https://holodex.net/api/v2/live/"
   const [isHovering, setIsHovering] = useState<number>(-1)
-  const [holoData, setHoloData] = useState<Api[]>([])
+  const [holoData, setHoloData] = useState<HoloData[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   const [isHidden, setIsHidden] = useState(false)
   const [fixedVideo, setFixedVideo] = useState(false)
@@ -92,7 +92,7 @@ const LiveCard = ({ isFixedVideo }: Props) => {
           <span className="sr-only">Loading...</span>
         </div>
       ) : null}
-      {holoData.map((holoDatas: Api, index) => {
+      {holoData.map((holoDatas: HoloData, index) => {
         return isCorrectLiveHoloUrl(holoDatas) ? (
           <div
             key={holoDatas.id}

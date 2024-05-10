@@ -22,7 +22,7 @@ https://holo-app.vercel.app
 .
 ├── README.md                      # プロジェクトの説明やドキュメンテーション
 ├── components                     # Reactコンポーネントが格納されているディレクトリ
-│   ├── atoms                      # 小さな再利用可能なコンポーネント
+│   ├── ui                         # 小さな再利用可能なコンポーネント
 │   └── layouts                    # 大きなコンポーネントやページのレイアウト
 ├── lib                            # プロジェクトで使用される外部ライブラリや関数を含むディレクトリ
 │   └── gtag.ts                    # GoogleAnalyticsの設定

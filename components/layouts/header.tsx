@@ -1,5 +1,5 @@
-import ActionControlsButton from "../atoms/actionControlsButton"
-import GroupIcon from "../atoms/groupIcon"
+import ActionControlsButton from "../ui/actionControlsButton"
+import GroupIcon from "../ui/groupIcon"
 
 interface Props {
   isOpenDrawer: boolean
