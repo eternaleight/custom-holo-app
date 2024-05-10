@@ -2,7 +2,7 @@ import dayjs from "dayjs"
 import React, { useContext, useEffect, useState } from "react"
 import { GlobalChangeCardContext } from "../../utils/globalChangeCardObserver"
 import { isCorrectScheduleHoloUrl } from "../../utils/util"
-import { Api } from "./liveCard"
+import { HoloData } from "./liveCard"
 
 const ScheduleCard = () => {
   const youtube_jpeg = "https://img.youtube.com/vi/"
@@ -12,7 +12,7 @@ const ScheduleCard = () => {
   }
   const holoVideo = "https://www.youtube.com/watch?v="
   const holoUrl = "https://holodex.net/api/v2/live/"
-  const [holoData, setHoloData] = useState<Api[]>([])
+  const [holoData, setHoloData] = useState<HoloData[]>([])
   const { isChangeCardSize, toggleChangeCardSize } = useContext(GlobalChangeCardContext)
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const ScheduleCard = () => {
 
   return (
     <div className="flex flex-wrap justify-center h-full gap-2">
-      {holoData.map((holoDatas: Api) => {
+      {holoData.map((holoDatas: HoloData) => {
         return isCorrectScheduleHoloUrl(holoDatas) ? (
           <div
             key={holoDatas.id}

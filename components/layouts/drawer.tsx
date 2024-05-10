@@ -1,4 +1,4 @@
-import CoinButton from "../atoms/coinButton"
+import CoinButton from "../ui/coinButton"
 
 interface Props {
   isOpenDrawer: boolean

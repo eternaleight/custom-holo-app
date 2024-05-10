@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { isCorrectLiveHoloUrl } from "../../utils/util"
 
-export type Api = {
+export type HoloData = {
   available_at: string
   channel: {
     english_name: string
@@ -26,7 +26,7 @@ export type Api = {
 const GroupIcon = () => {
   const holoVideo = "https://www.youtube.com/watch?v="
   const holoUrl = "https://holodex.net/api/v2/live/"
-  const [holoData, setHoloData] = useState<Api[]>([])
+  const [holoData, setHoloData] = useState<HoloData[]>([])
   useEffect(() => {
     ;(async () => {
       const res = await fetch(holoUrl, {
@@ -41,7 +41,7 @@ const GroupIcon = () => {
 
   return (
     <div className="max-md:absolute flex justify-end mr-3 max-md:items-end max-md:flex-col right-[2px] top-[60px] z-[2]">
-      {holoData.map((holoDatas: Api) => {
+      {holoData.map((holoDatas: HoloData) => {
         return isCorrectLiveHoloUrl(holoDatas) ? (
           <a
             key={holoDatas.id}

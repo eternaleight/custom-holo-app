@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import Header from "../components/layouts/header"
 import Footer from "../components/layouts/footer"
-import LiveCard from "../components/atoms/liveCard"
+import LiveCard from "../components/ui/liveCard"
 import Hero from "../components/layouts/hero"
-import ScheduleCard from "../components/atoms/scheduleCard"
-import GroupIcon from "../components/atoms/groupIcon"
+import ScheduleCard from "../components/ui/scheduleCard"
+import GroupIcon from "../components/ui/groupIcon"
 import Drawer from "../components/layouts/drawer"
 
 export default function Home() {
